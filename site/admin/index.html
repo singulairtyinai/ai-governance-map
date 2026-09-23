@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Register admin | AI Law Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div>
+        <h1 class="site-title">Register admin</h1>
+        <p class="site-sub">Add, edit and remove entries. Your changes are saved as one commit to your GitHub repository, and the site redeploys automatically.</p>
+      </div>
+      <nav class="nav" aria-label="Admin"><a href="../">View the register</a></nav>
+    </div>
+    <div class="wrap" style="height:1.5rem"></div>
+  </header>
+
+  <main class="wrap admin">
+    <section class="panel" id="connect" aria-labelledby="connect-h">
+      <h2 id="connect-h">1. Connect</h2>
+      <p class="hint">Saving needs a GitHub fine-grained access token limited to this one repository, with <strong>Contents: Read and write</strong>. The token stays in this browser tab's memory and is never stored. Only people holding a token with write access can publish changes, so no separate password is needed.</p>
+      <div class="grid4">
+        <div><label for="owner">GitHub user or organisation</label><input id="owner" type="text" autocomplete="off"></div>
+        <div><label for="repo">Repository</label><input id="repo" type="text" autocomplete="off"></div>
+        <div><label for="branch">Branch</label><input id="branch" type="text" value="main" autocomplete="off"></div>
+        <div><label for="token">Access token</label><input id="token" type="password" autocomplete="off" spellcheck="false"></div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn" id="btn-github">Connect and load entries</button>
+        <button type="button" class="link-btn" id="btn-local">Work without a token (download the JSON instead)</button>
+      </div>
+      <p id="connect-msg" class="msg" role="status"></p>
+    </section>
+
+    <section class="panel" id="list-panel" aria-labelledby="list-h" hidden>
+      <div class="toolbar">
+        <h2 id="list-h">2. Entries</h2>
+        <div class="row">
+          <label class="sr" for="filter">Filter entries</label>
+          <input id="filter" type="search" placeholder="Filter by title or country">
+          <button type="button" class="btn" id="btn-new">Add new entry</button>
+        </div>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th scope="col">Title</th><th scope="col">Type</th><th scope="col">Jurisdiction</th><th scope="col">Year</th><th scope="col"><span class="sr">Actions</span></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="editor" aria-labelledby="editor-h" hidden>
+      <h2 id="editor-h">Entry</h2>
+      <form id="form" novalidate>
+        <div class="grid2">
+          <div><label for="f-title">Title</label><input id="f-title" required></div>
+          <div><label for="f-id">Id (used in page links; cannot change after adding)</label><input id="f-id" required></div>
+          <div class="span2"><label for="f-short">One-line descriptor</label><input id="f-short" required></div>
+          <div><label for="f-jurisdiction">Jurisdiction</label><input id="f-jurisdiction" required></div>
+          <div><label for="f-region">Region</label>
+            <select id="f-region"><option>Global</option><option>Europe</option><option>Asia-Pacific</option><option>Americas</option><option>Africa</option><option>Middle East</option></select></div>
+          <div><label for="f-level">Level</label>
+            <select id="f-level"><option value="international">International</option><option value="regional">Regional</option><option value="national">National</option><option value="subnational">Subnational</option></select></div>
+          <div><label for="f-category">Type</label>
+            <select id="f-category"><option value="hard_law">Hard law</option><option value="soft_law">Soft law</option><option value="standard">Standard</option><option value="process">Process</option></select></div>
+          <div><label for="f-kind">Form (treaty, statute, resolution, code, and so on)</label><input id="f-kind" required></div>
+          <div><label for="f-binding">Legal force</label>
+            <select id="f-binding"><option value="binding">Binding</option><option value="pending">Not yet in force</option><option value="non_binding">Non-binding</option></select></div>
+          <div><label for="f-status">Status</label>
+            <select id="f-status"><option value="in_force">In force</option><option value="adopted">Adopted</option><option value="draft">Draft or bill</option><option value="ongoing">Ongoing</option><option value="concluded">Concluded</option><option value="revoked">Revoked</option></select></div>
+          <div><label for="f-year">Year</label><input id="f-year" type="number" min="1990" max="2100" required></div>
+          <div><label for="f-domain">Domain</label>
+            <select id="f-domain"><option value="civil">Civilian</option><option value="military">Military</option><option value="both">Civilian and military</option></select></div>
+          <div class="span2"><label for="f-status_note">Status note (dates, phases, what to check)</label><textarea id="f-status_note" rows="2"></textarea></div>
+          <div class="span2"><label for="f-summary">Summary</label><textarea id="f-summary" rows="3" required></textarea></div>
+          <div class="span2"><label for="f-key_points">Key points (one per line)</label><textarea id="f-key_points" rows="4"></textarea></div>
+          <div class="span2"><label for="f-sectors">Sectors (separate with commas)</label><input id="f-sectors"></div>
+          <div class="span2"><label for="f-related">Related entries (hold Ctrl or Cmd to select several)</label><select id="f-related" multiple size="6"></select></div>
+          <div class="span2"><label for="f-url">Primary source link</label><input id="f-url" type="url" placeholder="https://"></div>
+          <div><label for="f-last_verified">Last checked against the source</label><input id="f-last_verified" type="date"></div>
+          <div class="check"><input id="f-verify" type="checkbox"><label for="f-verify">Status changes quickly, so flag for regular rechecks</label></div>
+        </div>
+        <div id="errors" class="errors" role="alert" hidden></div>
+        <div class="row">
+          <button type="submit" class="btn">Apply to list</button>
+          <button type="button" class="link-btn" id="btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div class="savebar" id="savebar" hidden>
+    <div class="wrap savebar-inner">
+      <p id="save-msg" role="status">No unsaved changes.</p>
+      <div class="row">
+        <button type="button" class="link-btn" id="btn-discard">Discard changes</button>
+        <button type="button" class="btn" id="btn-save" disabled>Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

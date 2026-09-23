@@ -1,0 +1,52 @@
+[
+  {
+    "term": "Hard law",
+    "definition": "Rules that create legal obligations and can be enforced, such as treaties, statutes and regulations.",
+    "why": "Determines whether non-compliance can lead to fines, litigation or state responsibility."
+  },
+  {
+    "term": "Soft law",
+    "definition": "Non-binding instruments such as declarations, principles, guidelines and codes of conduct that shape behaviour without legal force.",
+    "why": "Often the first step toward binding rules, and the main tool where consensus for a treaty is missing."
+  },
+  {
+    "term": "High-risk AI system",
+    "definition": "An AI system used in areas where errors can seriously affect people, such as hiring, credit, health, policing or critical infrastructure.",
+    "why": "Triggers the heaviest obligations under risk-based laws like the EU AI Act and the Colorado AI Act."
+  },
+  {
+    "term": "General-purpose AI model",
+    "definition": "A model trained on broad data that can perform many different tasks and be built into many downstream applications.",
+    "why": "The EU AI Act gives these models their own set of obligations, separate from use-case rules."
+  },
+  {
+    "term": "Systemic risk",
+    "definition": "Risk from a very capable general-purpose model that could have significant effects at scale, for example on public safety or security.",
+    "why": "Models judged to pose it face extra evaluation, incident reporting and cybersecurity duties."
+  },
+  {
+    "term": "Frontier AI",
+    "definition": "The most advanced general-purpose AI models at a given time, whose capabilities may outpace understanding of their risks.",
+    "why": "The focus of the summit series, the G7 Hiroshima Process and laws such as California SB 53."
+  },
+  {
+    "term": "Lethal autonomous weapon system (LAWS)",
+    "definition": "A weapon system that, once activated, can select and engage targets without further human intervention.",
+    "why": "Subject of the CCW talks and UN General Assembly resolutions. There is no agreed definition."
+  },
+  {
+    "term": "Meaningful human control",
+    "definition": "The idea that humans must keep enough understanding of and influence over a weapon system's use of force to remain legally and morally accountable.",
+    "why": "A central concept in autonomous weapons debates. States use different wording, such as appropriate human judgement."
+  },
+  {
+    "term": "Two-tier approach",
+    "definition": "A proposed structure for regulating autonomous weapons: prohibit systems that cannot be used in line with international law, and place limits on all others.",
+    "why": "Frames much of the CCW rolling text and many national positions."
+  },
+  {
+    "term": "International humanitarian law (IHL)",
+    "definition": "The law of armed conflict, including the principles of distinction, proportionality and precaution.",
+    "why": "The baseline standard against which military uses of AI are assessed."
+  }
+]
