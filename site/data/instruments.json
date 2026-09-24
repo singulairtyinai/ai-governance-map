@@ -1,38 +1,45 @@
 [
   {
-    "id": "eu-ai-act",
-    "title": "EU Artificial Intelligence Act",
-    "short": "Regulation (EU) 2024/1689",
-    "jurisdiction": "European Union",
-    "country_code": "EU",
-    "region": "Europe",
-    "level": "regional",
-    "category": "hard_law",
-    "kind": "Regulation",
-    "binding": "binding",
-    "status": "in_force",
-    "status_note": "Entered into force 1 Aug 2024, applying in phases through 2027.",
-    "year": 2024,
-    "domain": "civil",
-    "sections": ["civilian", "national"],
-    "approach": "Risk-based horizontal framework",
-    "sectors": ["cross-sector", "biometrics", "employment", "critical infrastructure"],
-    "core_focus": "Sorts AI systems by risk tier (unacceptable, high, limited, minimal) and attaches strict compliance obligations, especially for general-purpose AI models.",
-    "summary": "The first comprehensive horizontal AI law, establishing a risk-based framework with separate rules for general-purpose AI models.",
-    "key_points": [
-      "Four risk tiers: unacceptable (banned), high, limited (transparency) and minimal",
-      "Extra duties for general-purpose AI models, including those posing systemic risk",
-      "Fines of up to EUR 35 million or 7% of worldwide turnover for prohibited practices"
+    "id": "us-ai-action-plan",
+    "title": "America's AI Action Plan",
+    "short": "US federal AI policy roadmap",
+    "jurisdiction": "United States (federal)",
+    "country_code": "US",
+    "region": "Americas",
+    "level": "national",
+    "category": "soft_law",
+    "kind": "Policy plan",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Released July 2025 as a policy roadmap. It directs agency action but is not itself a statute.",
+    "year": 2025,
+    "domain": "both",
+    "approach": "Federal policy roadmap",
+    "sectors": [
+      "federal government",
+      "infrastructure",
+      "defence"
     ],
-    "related": ["eu-gpai-code", "coe-convention", "iso-42001"],
-    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-    "verify": false,
-    "last_verified": "2026-09-24"
+    "core_focus": "Three pillars: innovation, infrastructure, international diplomacy and security",
+    "summary": "A federal plan built around accelerating innovation, building AI infrastructure and leading in international AI diplomacy and security.",
+    "key_points": [
+      "Three pillars: innovation, infrastructure, international diplomacy and security",
+      "Includes measures on federal and defence adoption of AI"
+    ],
+    "related": [
+      "us-eo-14179"
+    ],
+    "sections": [
+      "national"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
   },
   {
-    "id": "china-genai-measures",
-    "title": "China: Interim Measures for Generative AI Services",
-    "short": "Cyberspace Administration of China",
+    "id": "china-labeling-measures",
+    "title": "China: Measures for Labeling AI-Generated Content",
+    "short": "Explicit and implicit labels for synthetic content",
     "jurisdiction": "China",
     "country_code": "CN",
     "region": "Asia-Pacific",
@@ -41,23 +48,267 @@
     "kind": "Administrative measures",
     "binding": "binding",
     "status": "in_force",
-    "status_note": "In effect since 15 Aug 2023.",
-    "year": 2023,
+    "status_note": "In effect since 1 Sep 2025, alongside a mandatory national standard on labeling methods.",
+    "year": 2025,
     "domain": "civil",
-    "sections": ["civilian", "national"],
-    "approach": "Targeted and sector-specific state oversight",
-    "sectors": ["content", "cross-sector"],
-    "core_focus": "Mandates security assessments, algorithmic filing, and strict content controls for public-facing generative AI services.",
-    "summary": "Rules for providers offering generative AI services to the public in China, covering training data, content, and security assessment.",
-    "key_points": [
-      "Providers must use lawful data sources and respect intellectual property",
-      "Generated content must adhere to Chinese content rules and core socialist values",
-      "Services with public-opinion capacity face security assessment and algorithm filing"
+    "approach": "Targeted: labeling and provenance of synthetic content",
+    "sectors": [
+      "content",
+      "platforms"
     ],
-    "related": ["china-labeling-measures"],
-    "url": "http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+    "core_focus": "Explicit labels visible to users, plus implicit labels in file metadata",
+    "summary": "Requires AI-generated text, images, audio and video to carry visible labels and embedded metadata, with duties on service providers and distribution platforms.",
+    "key_points": [
+      "Explicit labels visible to users, plus implicit labels in file metadata",
+      "Platforms must check for and flag suspected AI-generated content"
+    ],
+    "related": [
+      "china-genai-measures"
+    ],
+    "sections": [
+      "national"
+    ],
+    "url": null,
     "verify": false,
-    "last_verified": "2026-09-24"
+    "last_verified": null
+  },
+  {
+    "id": "eu-gpai-code",
+    "title": "EU General-Purpose AI Code of Practice",
+    "short": "Voluntary compliance tool under the AI Act",
+    "jurisdiction": "European Union",
+    "region": "Europe",
+    "level": "regional",
+    "category": "soft_law",
+    "kind": "Code of practice",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Published July 2025. Signing is voluntary, but it is designed to help providers show compliance with the AI Act's general-purpose AI obligations.",
+    "year": 2025,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Three chapters: transparency, copyright, and safety and security",
+    "summary": "A code drafted with industry and experts that explains how providers of general-purpose AI models can meet their AI Act duties on transparency, copyright and safety and security.",
+    "key_points": [
+      "Three chapters: transparency, copyright, and safety and security",
+      "Safety and security chapter targets models with systemic risk",
+      "Voluntary, but signatories may benefit from a presumption of good practice"
+    ],
+    "related": [
+      "eu-ai-act"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "gc-reaim-report",
+    "title": "GC REAIM report: Responsible by Design",
+    "short": "Strategic guidance on AI in the military domain",
+    "jurisdiction": "Global Commission on REAIM (secretariat: HCSS)",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Expert report",
+    "binding": "non_binding",
+    "status": "concluded",
+    "year": 2025,
+    "domain": "military",
+    "sections": [
+      "military"
+    ],
+    "sectors": [
+      "defence"
+    ],
+    "summary": "Non-binding recommendations that stress responsibility by design, risk-based governance, and oversight and accountability mechanisms across the military AI lifecycle.",
+    "key_points": [],
+    "related": [
+      "reaim-summits"
+    ],
+    "url": null,
+    "verify": false,
+    "last_verified": null,
+    "core_focus": "Non-binding recommendations that stress responsibility by design, risk-based governance, and oversight and accountability mechanisms across the military AI lifecycle."
+  },
+  {
+    "id": "japan-ai-promotion-act",
+    "title": "Japan AI Promotion Act",
+    "short": "Act on R&D and utilisation of AI-related technologies",
+    "jurisdiction": "Japan",
+    "country_code": "JP",
+    "region": "Asia-Pacific",
+    "level": "national",
+    "category": "hard_law",
+    "kind": "Statute",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "Enacted May 2025. It is a promotional framework without direct penalties for most private actors.",
+    "year": 2025,
+    "domain": "civil",
+    "approach": "Soft-law and innovation-first",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Establishes an AI strategy headquarters",
+    "summary": "A light-touch law that sets national AI strategy, creates a central AI strategy body and relies mainly on guidance and cooperation rather than sanctions.",
+    "key_points": [
+      "Establishes an AI strategy headquarters",
+      "Emphasises promotion and voluntary compliance",
+      "Government may investigate and give guidance on harmful uses"
+    ],
+    "related": [
+      "korea-ai-basic-act"
+    ],
+    "sections": [
+      "national"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "unga-79-325",
+    "title": "UN Scientific Panel and Global Dialogue on AI Governance",
+    "short": "UNGA Resolution 79/325",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "process",
+    "kind": "UN General Assembly resolution and mechanisms",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Adopted 26 Aug 2025. Establishes an Independent International Scientific Panel on AI and a Global Dialogue on AI Governance, launched Sep 2025. The reference note reports the first Dialogue session in July 2026. Check the current meeting schedule.",
+    "year": 2025,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Scientific panel of independent experts reporting to the Assembly",
+    "summary": "Creates the first UN-based mechanisms on AI: a scientific panel to assess AI's impacts and a standing intergovernmental dialogue on governance.",
+    "key_points": [
+      "Scientific panel of independent experts reporting to the Assembly",
+      "Global Dialogue meets annually, alternating between Geneva and New York",
+      "Follows the Global Digital Compact of 2024"
+    ],
+    "sponsors": "UN General Assembly, under the Global Digital Compact",
+    "un_track": "civilian_resolution",
+    "related": [
+      "unga-78-265",
+      "global-digital-compact",
+      "bletchley-summit-series"
+    ],
+    "sections": [
+      "civilian",
+      "un"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "un-sg-report-a80-78",
+    "title": "UN Secretary-General report A/80/78 on AI in the military domain",
+    "short": "Report requested by resolution 79/239",
+    "jurisdiction": "United Nations (Secretary-General)",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Secretary-General report",
+    "binding": "non_binding",
+    "status": "concluded",
+    "year": 2025,
+    "domain": "military",
+    "sections": [
+      "military",
+      "un"
+    ],
+    "un_track": "report",
+    "sectors": [
+      "defence"
+    ],
+    "summary": "Substantive report on AI in the military domain, focused on areas other than LAWS. Annexes carry the views of member states, the ICRC, civil society, the scientific community and industry.",
+    "key_points": [],
+    "related": [
+      "unga-79-239"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null,
+    "core_focus": "Substantive report on AI in the military domain, focused on areas other than LAWS."
+  },
+  {
+    "id": "unga-laws-2025",
+    "title": "UNGA First Committee resolution A/C.1/80/L.41 on LAWS",
+    "short": "Third consecutive annual LAWS resolution",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "First Committee vote 6 Nov 2025. Confirm the General Assembly plenary outcome and the final resolution number.",
+    "year": 2025,
+    "domain": "military",
+    "sections": [
+      "military",
+      "un"
+    ],
+    "un_track": "laws_resolution",
+    "votes": "Reported result: 164 in favour, 6 against (Belarus, Burundi, DPRK, Israel, Russian Federation, United States), 7 abstentions (including Argentina and China).",
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "summary": "Stresses the need for a comprehensive, inclusive multilateral approach but stops short of mandating further formal consultations. It only encourages states to hold further exchanges.",
+    "key_points": [],
+    "related": [
+      "unga-79-62",
+      "ccw-gge-laws"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null,
+    "core_focus": "Stresses the need for a comprehensive, inclusive multilateral approach but stops short of mandating further formal consultations."
+  },
+  {
+    "id": "unga-military-2025",
+    "title": "UNGA follow-up resolution A/C.1/80/L.46 on AI in the military domain",
+    "short": "Follow-up to resolution 79/239",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Adopted at the First Committee in October 2025. Confirm the General Assembly plenary outcome and the final resolution number.",
+    "year": 2025,
+    "domain": "military",
+    "sections": [
+      "military",
+      "un"
+    ],
+    "un_track": "military_resolution",
+    "votes": "Adopted at the First Committee in October 2025.",
+    "sponsors": "Same core group as 79/239, including Austria, Pakistan, the Netherlands and the Republic of Korea, plus dozens of others (for example Albania, Australia, Belgium, Brazil, Canada, Germany, the UK and Ukraine)",
+    "sectors": [
+      "defence"
+    ],
+    "summary": "Builds on 79/239 and expands institutional support for international cooperation on responsible military AI.",
+    "key_points": [],
+    "related": [
+      "unga-79-239"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null,
+    "core_focus": "Builds on 79/239 and expands institutional support for international cooperation on responsible military AI."
   },
   {
     "id": "us-eo-14179",
@@ -74,163 +325,24 @@
     "status_note": "Signed 23 Jan 2025. Revoked Executive Order 14110.",
     "year": 2025,
     "domain": "both",
-    "sections": ["national"],
     "approach": "Decentralised patchwork: federal guidance",
-    "sectors": ["federal government", "cross-sector"],
+    "sectors": [
+      "federal government",
+      "cross-sector"
+    ],
     "core_focus": "Sets a deregulatory federal direction on AI and orders an action plan to sustain US AI leadership, replacing prior safety-focused approaches.",
     "summary": "Sets a deregulatory federal direction on AI and orders an action plan to sustain US AI leadership.",
     "key_points": [
       "Revoked Executive Order 14110 on safe, secure and trustworthy AI",
       "Directed development of a national AI action plan"
     ],
-    "related": ["us-ai-action-plan"],
+    "related": [
+      "us-ai-action-plan"
+    ],
+    "sections": [
+      "national"
+    ],
     "url": "https://www.whitehouse.gov/presidential-actions/",
-    "verify": false,
-    "last_verified": "2026-09-24"
-  },
-  {
-    "id": "uk-pro-innovation-approach",
-    "title": "UK pro-innovation approach to AI regulation",
-    "short": "Principles-based, regulator-led model",
-    "jurisdiction": "United Kingdom",
-    "country_code": "GB",
-    "region": "Europe",
-    "level": "national",
-    "category": "soft_law",
-    "kind": "Policy framework",
-    "binding": "non_binding",
-    "status": "ongoing",
-    "status_note": "Set out in a March 2023 white paper. Existing sector regulators apply cross-cutting principles.",
-    "year": 2023,
-    "domain": "civil",
-    "sections": ["national"],
-    "approach": "Contextual and regulator-led",
-    "sectors": ["cross-sector"],
-    "core_focus": "Relies on existing sector regulators to apply shared principles (safety, transparency, fairness, accountability) rather than creating a single horizontal AI law.",
-    "summary": "Relies on existing regulators to apply shared principles within their own sectors.",
-    "key_points": [
-      "No single horizontal AI law",
-      "Five cross-cutting principles applied by sector regulators"
-    ],
-    "related": ["bletchley-summit-series"],
-    "url": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach",
-    "verify": false,
-    "last_verified": "2026-09-24"
-  },
-  {
-    "id": "nist-ai-rmf",
-    "title": "NIST AI Risk Management Framework",
-    "short": "AI RMF 1.0 and Generative AI Profile",
-    "jurisdiction": "United States",
-    "country_code": "US",
-    "region": "Americas",
-    "level": "national",
-    "category": "soft_law",
-    "kind": "Voluntary framework",
-    "binding": "non_binding",
-    "status": "in_force",
-    "status_note": "AI RMF 1.0 published Jan 2023. Generative AI Profile followed in Jul 2024.",
-    "year": 2023,
-    "domain": "civil",
-    "sections": ["civilian"],
-    "sectors": ["cross-sector"],
-    "core_focus": "Provides a voluntary framework to help organizations identify, assess, and manage AI risks through four functions: Govern, Map, Measure, and Manage.",
-    "summary": "A voluntary framework that helps organisations identify, assess and manage AI risks.",
-    "key_points": [
-      "Widely referenced in procurement and state laws as a benchmark for reasonable care",
-      "Generative AI Profile adds risks specific to generative systems"
-    ],
-    "related": ["iso-42001", "oecd-principles"],
-    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
-    "verify": false,
-    "last_verified": "2026-09-24"
-  },
-  {
-    "id": "oecd-principles",
-    "title": "OECD AI Principles",
-    "short": "First intergovernmental AI standard",
-    "jurisdiction": "OECD and adherents",
-    "country_code": "INT",
-    "region": "Global",
-    "level": "international",
-    "category": "soft_law",
-    "kind": "Recommendation",
-    "binding": "non_binding",
-    "status": "in_force",
-    "status_note": "Adopted May 2019 and updated May 2024.",
-    "year": 2019,
-    "domain": "civil",
-    "sections": ["civilian"],
-    "sectors": ["cross-sector"],
-    "core_focus": "Establishes five values-based principles for trustworthy AI (inclusive growth, human rights, transparency, robustness, accountability) and recommendations for governments.",
-    "summary": "Five values-based principles for trustworthy AI and five recommendations for governments.",
-    "key_points": [
-      "Inclusive growth, human rights and fairness, transparency, robustness, accountability",
-      "2024 update addressed generative AI, safety and information integrity"
-    ],
-    "related": ["unesco-recommendation", "nist-ai-rmf"],
-    "url": "https://oecd.ai/en/ai-principles",
-    "verify": false,
-    "last_verified": "2026-09-24"
-  },
-  {
-    "id": "unga-78-265",
-    "title": "UNGA Resolution 78/265 on safe, secure and trustworthy AI",
-    "short": "First UN General Assembly resolution on AI",
-    "jurisdiction": "United Nations",
-    "country_code": "UN",
-    "region": "Global",
-    "level": "international",
-    "category": "soft_law",
-    "kind": "UN General Assembly resolution",
-    "binding": "non_binding",
-    "status": "adopted",
-    "status_note": "Adopted by consensus on 21 Mar 2024.",
-    "year": 2024,
-    "domain": "civil",
-    "sections": ["civilian", "un"],
-    "un_track": "civilian_resolution",
-    "sponsors": "US-led; adopted by consensus",
-    "sectors": ["development", "human rights"],
-    "core_focus": "Calls on states to develop safe, secure and trustworthy AI that respects human rights, supports Sustainable Development Goals, and bridges the AI divide.",
-    "summary": "Calls on states to develop safe, secure and trustworthy AI that respects human rights and supports the Sustainable Development Goals.",
-    "key_points": [
-      "Consensus text co-sponsored by a large cross-regional group",
-      "Focus on development and capacity building",
-      "Excludes the military domain"
-    ],
-    "related": ["unga-79-325", "unga-79-239"],
-    "url": "https://docs.un.org/en/A/RES/78/265",
-    "verify": false,
-    "last_verified": "2026-09-24"
-  },
-  {
-    "id": "korea-ai-basic-act",
-    "title": "Korea AI Basic Act",
-    "short": "Framework Act on AI Development and Trust",
-    "jurisdiction": "South Korea",
-    "country_code": "KR",
-    "region": "Asia-Pacific",
-    "level": "national",
-    "category": "hard_law",
-    "kind": "Statute",
-    "binding": "binding",
-    "status": "in_force",
-    "status_note": "Passed Dec 2024, in effect 22 Jan 2026.",
-    "year": 2024,
-    "domain": "civil",
-    "sections": ["national"],
-    "approach": "Hybrid: promotion plus baseline oversight",
-    "sectors": ["cross-sector"],
-    "core_focus": "Combines industry promotion with baseline duties for high-impact AI and transparency requirements for generative AI outputs.",
-    "summary": "A framework law combining industry promotion with duties for high-impact AI and transparency for generative AI.",
-    "key_points": [
-      "Obligations for 'high-impact' AI systems",
-      "Transparency and labeling for generative AI outputs",
-      "Applies to foreign providers affecting the Korean market"
-    ],
-    "related": ["japan-ai-promotion-act"],
-    "url": "https://elaw.klri.re.kr/eng_service/lawView.do?hseq=67890",
     "verify": false,
     "last_verified": "2026-09-24"
   },
@@ -249,9 +361,10 @@
     "status_note": "Approved by the Senate in Dec 2024 and pending in the Chamber of Deputies.",
     "year": 2024,
     "domain": "civil",
-    "sections": ["national"],
     "approach": "Risk-based and rights-focused (proposed)",
-    "sectors": ["cross-sector"],
+    "sectors": [
+      "cross-sector"
+    ],
     "core_focus": "Grants rights to people affected by AI systems and sets duties by risk level, closely mirroring the EU AI Act approach.",
     "summary": "A risk-based bill that grants rights to people affected by AI systems and sets duties by risk level.",
     "key_points": [
@@ -259,10 +372,472 @@
       "Rights to explanation and to contest decisions",
       "Civil liability provisions"
     ],
-    "related": ["eu-ai-act"],
+    "related": [
+      "eu-ai-act"
+    ],
+    "sections": [
+      "national"
+    ],
     "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160963",
     "verify": false,
     "last_verified": "2026-09-24"
+  },
+  {
+    "id": "us-colorado-ai-act",
+    "title": "Colorado AI Act (SB 24-205)",
+    "short": "Consumer protections for high-risk AI systems",
+    "jurisdiction": "Colorado, United States",
+    "country_code": "US",
+    "region": "Americas",
+    "level": "subnational",
+    "category": "hard_law",
+    "kind": "State statute",
+    "binding": "binding",
+    "status": "adopted",
+    "status_note": "Signed May 2024. The effective date was delayed to 30 Jun 2026 by a later special-session bill. Check whether further amendments or delays have followed.",
+    "year": 2024,
+    "domain": "civil",
+    "approach": "Decentralised patchwork: state-led",
+    "sectors": [
+      "employment",
+      "finance",
+      "health",
+      "housing",
+      "education"
+    ],
+    "core_focus": "Duties for both developers and deployers",
+    "summary": "Requires developers and deployers of high-risk AI systems to use reasonable care to avoid algorithmic discrimination in consequential decisions.",
+    "key_points": [
+      "Duties for both developers and deployers",
+      "Focus on consequential decisions such as hiring, lending, housing and healthcare",
+      "Enforced by the state attorney general"
+    ],
+    "related": [
+      "eu-ai-act"
+    ],
+    "sections": [
+      "civilian",
+      "national"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "coe-convention",
+    "title": "Council of Europe Framework Convention on AI",
+    "short": "CETS No. 225: human rights, democracy and the rule of law",
+    "jurisdiction": "Council of Europe (open to non-members)",
+    "region": "Global",
+    "level": "international",
+    "category": "hard_law",
+    "kind": "Treaty",
+    "binding": "pending",
+    "status": "adopted",
+    "status_note": "Opened for signature 5 Sep 2024. The EU ratified on 15 May 2026, per a Council of Europe announcement. Entry into force needs five ratifications, including at least three Council of Europe member states, so confirm the current ratification count in the treaty office table. The reference note lists 16 signatories, but signature alone does not bind a state.",
+    "year": 2024,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector",
+      "public sector"
+    ],
+    "core_focus": "Covers public authorities and private actors acting on their behalf",
+    "summary": "The first legally binding international treaty on AI. It requires parties to manage AI risks to human rights, democracy and the rule of law across the system lifecycle.",
+    "key_points": [
+      "Covers public authorities and private actors acting on their behalf",
+      "Parties choose how to address private-sector AI, through measures suited to their legal system",
+      "National defence matters are excluded, and national security activities must still respect international law",
+      "Open to signature by non-European states"
+    ],
+    "related": [
+      "eu-ai-act",
+      "oecd-principles"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence",
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "eu-ai-act",
+    "title": "EU Artificial Intelligence Act",
+    "short": "Regulation (EU) 2024/1689",
+    "jurisdiction": "European Union",
+    "country_code": "EU",
+    "region": "Europe",
+    "level": "regional",
+    "category": "hard_law",
+    "kind": "Regulation",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "Entered into force 1 Aug 2024, applying in phases through 2027.",
+    "year": 2024,
+    "domain": "civil",
+    "approach": "Risk-based horizontal framework",
+    "sectors": [
+      "cross-sector",
+      "biometrics",
+      "employment",
+      "critical infrastructure"
+    ],
+    "core_focus": "Sorts AI systems by risk tier (unacceptable, high, limited, minimal) and attaches strict compliance obligations, especially for general-purpose AI models.",
+    "summary": "The first comprehensive horizontal AI law, establishing a risk-based framework with separate rules for general-purpose AI models.",
+    "key_points": [
+      "Four risk tiers: unacceptable (banned), high, limited (transparency) and minimal",
+      "Extra duties for general-purpose AI models, including those posing systemic risk",
+      "Fines of up to EUR 35 million or 7% of worldwide turnover for prohibited practices"
+    ],
+    "related": [
+      "eu-gpai-code",
+      "coe-convention",
+      "iso-42001"
+    ],
+    "sections": [
+      "civilian",
+      "national"
+    ],
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "global-digital-compact",
+    "title": "Global Digital Compact",
+    "short": "Annex to the Pact for the Future",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Political compact",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Adopted Sep 2024 as an annex to the Pact for the Future.",
+    "year": 2024,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector",
+      "development"
+    ],
+    "core_focus": "Called for the scientific panel and global dialogue on AI",
+    "summary": "A UN political agreement on digital cooperation that includes commitments on AI governance, capacity building and inclusion.",
+    "key_points": [
+      "Called for the scientific panel and global dialogue on AI",
+      "Objectives on digital connectivity, data governance and AI"
+    ],
+    "un_track": "report",
+    "related": [
+      "unga-79-325"
+    ],
+    "sections": [
+      "un"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "korea-ai-basic-act",
+    "title": "Korea AI Basic Act",
+    "short": "Framework Act on AI Development and Trust",
+    "jurisdiction": "South Korea",
+    "country_code": "KR",
+    "region": "Asia-Pacific",
+    "level": "national",
+    "category": "hard_law",
+    "kind": "Statute",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "Passed Dec 2024, in effect 22 Jan 2026.",
+    "year": 2024,
+    "domain": "civil",
+    "approach": "Hybrid: promotion plus baseline oversight",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Combines industry promotion with baseline duties for high-impact AI and transparency requirements for generative AI outputs.",
+    "summary": "A framework law combining industry promotion with duties for high-impact AI and transparency for generative AI.",
+    "key_points": [
+      "Obligations for 'high-impact' AI systems",
+      "Transparency and labeling for generative AI outputs",
+      "Applies to foreign providers affecting the Korean market"
+    ],
+    "related": [
+      "japan-ai-promotion-act"
+    ],
+    "sections": [
+      "national"
+    ],
+    "url": "https://elaw.klri.re.kr/eng_service/lawView.do?hseq=67890",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "unga-78-265",
+    "title": "UNGA Resolution 78/265 on safe, secure and trustworthy AI",
+    "short": "First UN General Assembly resolution on AI",
+    "jurisdiction": "United Nations",
+    "country_code": "UN",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Adopted by consensus on 21 Mar 2024.",
+    "year": 2024,
+    "domain": "civil",
+    "sectors": [
+      "development",
+      "human rights"
+    ],
+    "core_focus": "Calls on states to develop safe, secure and trustworthy AI that respects human rights, supports Sustainable Development Goals, and bridges the AI divide.",
+    "summary": "Calls on states to develop safe, secure and trustworthy AI that respects human rights and supports the Sustainable Development Goals.",
+    "key_points": [
+      "Consensus text co-sponsored by a large cross-regional group",
+      "Focus on development and capacity building",
+      "Excludes the military domain"
+    ],
+    "sponsors": "US-led; adopted by consensus",
+    "un_track": "civilian_resolution",
+    "related": [
+      "unga-79-325",
+      "unga-79-239"
+    ],
+    "sections": [
+      "civilian",
+      "un"
+    ],
+    "url": "https://docs.un.org/en/A/RES/78/265",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "unga-79-239",
+    "title": "UNGA Resolution 79/239 on AI in the military domain",
+    "short": "AI in the military domain and international peace and security",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Adopted Dec 2024 in the First Committee track. It requested the Secretary-General to gather states' views.",
+    "year": 2024,
+    "domain": "military",
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "core_focus": "Affirms applicability of international law, including international humanitarian law",
+    "summary": "Recognises the opportunities and risks of AI in the military domain, affirms that international law applies and invites states to share views for further discussion.",
+    "key_points": [
+      "Affirms applicability of international law, including international humanitarian law",
+      "Secretary-General report compiling state views",
+      "Complements work on autonomous weapons"
+    ],
+    "sponsors": "Netherlands and Republic of Korea; co-sponsored by 60+ states, including Austria and Pakistan",
+    "un_track": "military_resolution",
+    "votes": "First Committee: 159 in favour, 2 against, 5 abstentions. Adopted by the General Assembly on 24 Dec 2024.",
+    "related": [
+      "unga-79-62",
+      "ccw-gge-laws",
+      "reaim-summits",
+      "un-sg-report-a80-78",
+      "unga-military-2025"
+    ],
+    "sections": [
+      "military",
+      "un"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "unga-79-62",
+    "title": "UNGA Resolution 79/62 on lethal autonomous weapons systems",
+    "short": "Consultations in New York in 2025",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "status_note": "Adopted Dec 2024. It mandated open informal consultations in New York in 2025 to complement the CCW process.",
+    "year": 2024,
+    "domain": "military",
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "core_focus": "Informal consultations open to all states and other stakeholders",
+    "summary": "Builds on earlier resolutions to bring the autonomous weapons discussion into the General Assembly alongside the Geneva-based CCW talks.",
+    "key_points": [
+      "Informal consultations open to all states and other stakeholders",
+      "Supports the call for a legal response by 2026"
+    ],
+    "un_track": "laws_resolution",
+    "votes": "First Committee, 5 Nov 2024: 161 in favour, 3 against, 13 abstentions. General Assembly, 2 Dec 2024: 166 in favour, 3 against (Belarus, DPRK, Russian Federation), 15 abstentions.",
+    "related": [
+      "ccw-gge-laws",
+      "unga-79-239",
+      "unga-78-241",
+      "unga-laws-2025"
+    ],
+    "sections": [
+      "military",
+      "un"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "bletchley-summit-series",
+    "title": "AI summit series: Bletchley, Seoul, Paris, India",
+    "short": "Leader-level meetings on frontier AI safety and action",
+    "jurisdiction": "Multiple governments",
+    "region": "Global",
+    "level": "international",
+    "category": "process",
+    "kind": "Summit series",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Bletchley (Nov 2023), Seoul (May 2024), Paris (Feb 2025), India AI Impact Summit (Feb 2026). The US and UK did not sign the Paris summit statement.",
+    "year": 2023,
+    "domain": "civil",
+    "sectors": [
+      "frontier AI"
+    ],
+    "core_focus": "Bletchley Declaration on frontier AI risks",
+    "summary": "A run of government-hosted summits that began with frontier AI safety at Bletchley Park and has widened to cover innovation, inclusion and impact.",
+    "key_points": [
+      "Bletchley Declaration on frontier AI risks",
+      "Seoul frontier AI safety commitments by companies",
+      "Network of national AI safety institutes emerged from this track"
+    ],
+    "related": [
+      "g7-hiroshima-process",
+      "unga-79-325"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration",
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "china-genai-measures",
+    "title": "China: Interim Measures for Generative AI Services",
+    "short": "Cyberspace Administration of China",
+    "jurisdiction": "China",
+    "country_code": "CN",
+    "region": "Asia-Pacific",
+    "level": "national",
+    "category": "hard_law",
+    "kind": "Administrative measures",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "In effect since 15 Aug 2023.",
+    "year": 2023,
+    "domain": "civil",
+    "approach": "Targeted and sector-specific state oversight",
+    "sectors": [
+      "content",
+      "cross-sector"
+    ],
+    "core_focus": "Mandates security assessments, algorithmic filing, and strict content controls for public-facing generative AI services.",
+    "summary": "Rules for providers offering generative AI services to the public in China, covering training data, content, and security assessment.",
+    "key_points": [
+      "Providers must use lawful data sources and respect intellectual property",
+      "Generated content must adhere to Chinese content rules and core socialist values",
+      "Services with public-opinion capacity face security assessment and algorithm filing"
+    ],
+    "related": [
+      "china-labeling-measures"
+    ],
+    "sections": [
+      "civilian",
+      "national"
+    ],
+    "url": "http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "g7-hiroshima-process",
+    "title": "G7 Hiroshima AI Process",
+    "short": "Guiding principles and code of conduct for advanced AI developers",
+    "jurisdiction": "G7",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Principles and code of conduct",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Principles and code of conduct issued Oct 2023, followed by a reporting framework run with the OECD.",
+    "year": 2023,
+    "domain": "civil",
+    "sectors": [
+      "frontier AI"
+    ],
+    "core_focus": "International Guiding Principles and a voluntary Code of Conduct",
+    "summary": "A G7 initiative setting voluntary guidance for organisations developing the most advanced AI systems, including risk assessment, incident sharing and transparency.",
+    "key_points": [
+      "International Guiding Principles and a voluntary Code of Conduct",
+      "Reporting framework for developers",
+      "HAIP Reporting Framework: voluntary transparency reporting on company safety practices, with wide variation across reports"
+    ],
+    "related": [
+      "oecd-principles",
+      "bletchley-summit-series"
+    ],
+    "sections": [
+      "civilian",
+      "industry"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "iso-42001",
+    "title": "ISO/IEC 42001:2023",
+    "short": "AI management system standard",
+    "jurisdiction": "International (ISO/IEC)",
+    "region": "Global",
+    "level": "international",
+    "category": "standard",
+    "kind": "Management system standard",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Published Dec 2023. Certifiable by accredited bodies. Voluntary unless a contract or law requires it.",
+    "year": 2023,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Requirements for policies, risk assessment, impact assessment and lifecycle controls",
+    "summary": "The first certifiable management system standard for organisations that develop, provide or use AI, in the style of ISO 27001.",
+    "key_points": [
+      "Requirements for policies, risk assessment, impact assessment and lifecycle controls",
+      "Certification lets organisations show governance maturity"
+    ],
+    "related": [
+      "nist-ai-rmf",
+      "eu-ai-act"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://www.iso.org/standard/81230.html",
+    "verify": false,
+    "last_verified": null
   },
   {
     "id": "india-it-rules-dpdp",
@@ -279,9 +854,11 @@
     "status_note": "Synthetic content rules and DPDP Act in effect.",
     "year": 2023,
     "domain": "civil",
-    "sections": ["national"],
     "approach": "Digital safety and provenance",
-    "sectors": ["content", "platforms"],
+    "sectors": [
+      "content",
+      "platforms"
+    ],
     "core_focus": "Mandates that platforms prominently label AI-generated content, embed watermarks/metadata, and swiftly remove harmful deepfakes.",
     "summary": "Platforms must prominently label AI content, embed watermarks or metadata, and swiftly remove harmful deepfakes.",
     "key_points": [
@@ -289,9 +866,222 @@
       "Digital Personal Data Protection Act covers personal data used in AI"
     ],
     "related": [],
+    "sections": [
+      "national"
+    ],
     "url": "https://www.meity.gov.in/writereaddata/files/Information_Technology_Intermediary_Guidelines_Amendment_Rules_2023.pdf",
     "verify": false,
     "last_verified": "2026-09-24"
+  },
+  {
+    "id": "nist-ai-rmf",
+    "title": "NIST AI Risk Management Framework",
+    "short": "AI RMF 1.0 and Generative AI Profile",
+    "jurisdiction": "United States",
+    "country_code": "US",
+    "region": "Americas",
+    "level": "national",
+    "category": "soft_law",
+    "kind": "Voluntary framework",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "AI RMF 1.0 published Jan 2023. Generative AI Profile followed in Jul 2024.",
+    "year": 2023,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Provides a voluntary framework to help organizations identify, assess, and manage AI risks through four functions: Govern, Map, Measure, and Manage.",
+    "summary": "A voluntary framework that helps organisations identify, assess and manage AI risks.",
+    "key_points": [
+      "Widely referenced in procurement and state laws as a benchmark for reasonable care",
+      "Generative AI Profile adds risks specific to generative systems"
+    ],
+    "related": [
+      "iso-42001",
+      "oecd-principles"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "us-political-declaration",
+    "title": "Political Declaration on Responsible Military Use of AI and Autonomy",
+    "short": "Voluntary norms endorsed by dozens of states",
+    "jurisdiction": "Endorsing states",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Political declaration",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Launched by the United States in Feb 2023 and opened for endorsement. Check the current list of endorsing states and the current US position.",
+    "year": 2023,
+    "domain": "military",
+    "sectors": [
+      "defence"
+    ],
+    "core_focus": "Emphasises compliance with international humanitarian law",
+    "summary": "A non-binding declaration of good practice for military AI, covering legal review, human accountability, testing and safeguards against unintended behaviour.",
+    "key_points": [
+      "Emphasises compliance with international humanitarian law",
+      "Calls for appropriate human judgement and testing",
+      "Opposes a pre-emptive ban on lethal autonomous weapons",
+      "Sits outside the UN and CCW frameworks"
+    ],
+    "related": [
+      "reaim-summits",
+      "ccw-gge-laws"
+    ],
+    "sections": [
+      "military"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "reaim-summits",
+    "title": "REAIM: Summits on Responsible AI in the Military Domain",
+    "short": "The Hague 2023, Seoul 2024, A Coruña 2026",
+    "jurisdiction": "Participating states",
+    "region": "Global",
+    "level": "international",
+    "category": "process",
+    "kind": "Summit series",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "The Hague Call to Action (Feb 2023, 58 signatories) and Seoul Blueprint for Action (Sep 2024, 63 signatories), per the reference note. The third summit took place in A Coruña, Spain, on 4 to 5 Feb 2026 (the reference note says Madrid; Spanish government sources say A Coruña), with a final political declaration. The reference note lists 'Pathways to Action' as the 2026 output. Press reports say a fourth summit is planned in Nairobi in April 2027. Check outcomes and endorsements.",
+    "year": 2023,
+    "domain": "military",
+    "sectors": [
+      "defence"
+    ],
+    "core_focus": "Broadened scope beyond LAWS to logistics, intelligence, decision support, cyber operations, electronic warfare, information operations and the nuclear domain",
+    "summary": "A state-led series that builds shared understanding of responsible military AI. Outcome documents attract voluntary endorsement, and not all states endorse them.",
+    "key_points": [
+      "Broadened scope beyond LAWS to logistics, intelligence, decision support, cyber operations, electronic warfare, information operations and the nuclear domain",
+      "Non-binding outcome documents",
+      "Global Commission on REAIM produced expert recommendations",
+      "Complements formal UN and CCW discussions"
+    ],
+    "related": [
+      "us-political-declaration",
+      "ccw-gge-laws",
+      "unga-79-239",
+      "gc-reaim-report"
+    ],
+    "sections": [
+      "military"
+    ],
+    "url": "https://exteriores.gob.es/en/Comunicacion/NotasPrensa/Paginas/2025_NOTAS_P/Espana-acogera-una-cumbre-internacional-sobre-el-uso-responsable-de-la-Inteligencia-Artificial-en-el-ambito-militar.aspx",
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "uk-pro-innovation-approach",
+    "title": "UK pro-innovation approach to AI regulation",
+    "short": "Principles-based, regulator-led model",
+    "jurisdiction": "United Kingdom",
+    "country_code": "GB",
+    "region": "Europe",
+    "level": "national",
+    "category": "soft_law",
+    "kind": "Policy framework",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Set out in a March 2023 white paper. Existing sector regulators apply cross-cutting principles.",
+    "year": 2023,
+    "domain": "civil",
+    "approach": "Contextual and regulator-led",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Relies on existing sector regulators to apply shared principles (safety, transparency, fairness, accountability) rather than creating a single horizontal AI law.",
+    "summary": "Relies on existing regulators to apply shared principles within their own sectors.",
+    "key_points": [
+      "No single horizontal AI law",
+      "Five cross-cutting principles applied by sector regulators"
+    ],
+    "related": [
+      "bletchley-summit-series"
+    ],
+    "sections": [
+      "national"
+    ],
+    "url": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "sg-laws-treaty-call",
+    "title": "UN Secretary-General's call for a LAWS treaty by 2026",
+    "short": "Legally binding instrument proposed in the New Agenda for Peace",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "hard_law",
+    "kind": "Proposed treaty",
+    "binding": "pending",
+    "status": "draft",
+    "status_note": "The 2026 target is largely unmet and negotiations are ongoing, per the reference note. See the CCW GGE entry for the current text and the Nov 2026 Review Conference.",
+    "year": 2023,
+    "domain": "military",
+    "sections": [
+      "military"
+    ],
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "summary": "Calls for a treaty that prohibits lethal autonomous weapons operating without human control or oversight and regulates other autonomous weapon systems.",
+    "key_points": [],
+    "related": [
+      "ccw-gge-laws",
+      "unga-laws-2025"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null,
+    "core_focus": "Calls for a treaty that prohibits lethal autonomous weapons operating without human control or oversight and regulates other autonomous weapon systems."
+  },
+  {
+    "id": "unga-78-241",
+    "title": "UNGA Resolution 78/241 on lethal autonomous weapons systems",
+    "short": "First UN General Assembly resolution on LAWS",
+    "jurisdiction": "United Nations",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "UN General Assembly resolution",
+    "binding": "non_binding",
+    "status": "adopted",
+    "year": 2023,
+    "domain": "military",
+    "sections": [
+      "military",
+      "un"
+    ],
+    "un_track": "laws_resolution",
+    "votes": "First Committee, 1 Nov 2023: 164 in favour, 5 against. Adopted by the General Assembly.",
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "summary": "Requested the Secretary-General to gather member states' views and report to the 79th session, and acknowledged the CCW GGE's ongoing work.",
+    "key_points": [],
+    "related": [
+      "unga-79-62",
+      "ccw-gge-laws"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null,
+    "core_focus": "Requested the Secretary-General to gather member states' views and report to the 79th session, and acknowledged the CCW GGE's ongoing work."
   },
   {
     "id": "canada-aida",
@@ -308,9 +1098,10 @@
     "status_note": "Died on the Order Paper when Parliament was prorogued in Jan 2025.",
     "year": 2022,
     "domain": "civil",
-    "sections": ["national"],
     "approach": "Targeted oversight of high-impact systems (lapsed)",
-    "sectors": ["cross-sector"],
+    "sectors": [
+      "cross-sector"
+    ],
     "core_focus": "Would have regulated high-impact AI systems with compliance reporting, audits, and penalties overseen by an AI and Data Commissioner.",
     "summary": "Would have regulated high-impact AI systems, with compliance reporting, audits and penalties.",
     "key_points": [
@@ -319,8 +1110,119 @@
       "Currently lapsed"
     ],
     "related": [],
+    "sections": [
+      "national"
+    ],
     "url": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act",
     "verify": false,
     "last_verified": "2026-09-24"
+  },
+  {
+    "id": "unesco-recommendation",
+    "title": "UNESCO Recommendation on the Ethics of AI",
+    "short": "Adopted by 193 member states",
+    "jurisdiction": "UNESCO member states",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Recommendation",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Adopted Nov 2021.",
+    "year": 2021,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector",
+      "education",
+      "culture"
+    ],
+    "core_focus": "Covers data governance, environment, gender, education and culture",
+    "summary": "A global normative instrument on AI ethics covering values, principles and policy areas, with tools such as readiness assessment and ethical impact assessment.",
+    "key_points": [
+      "Covers data governance, environment, gender, education and culture",
+      "Member states report periodically on implementation"
+    ],
+    "related": [
+      "oecd-principles"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics",
+    "verify": false,
+    "last_verified": null
+  },
+  {
+    "id": "oecd-principles",
+    "title": "OECD AI Principles",
+    "short": "First intergovernmental AI standard",
+    "jurisdiction": "OECD and adherents",
+    "country_code": "INT",
+    "region": "Global",
+    "level": "international",
+    "category": "soft_law",
+    "kind": "Recommendation",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Adopted May 2019 and updated May 2024.",
+    "year": 2019,
+    "domain": "civil",
+    "sectors": [
+      "cross-sector"
+    ],
+    "core_focus": "Establishes five values-based principles for trustworthy AI (inclusive growth, human rights, transparency, robustness, accountability) and recommendations for governments.",
+    "summary": "Five values-based principles for trustworthy AI and five recommendations for governments.",
+    "key_points": [
+      "Inclusive growth, human rights and fairness, transparency, robustness, accountability",
+      "2024 update addressed generative AI, safety and information integrity"
+    ],
+    "related": [
+      "unesco-recommendation",
+      "nist-ai-rmf"
+    ],
+    "sections": [
+      "civilian"
+    ],
+    "url": "https://oecd.ai/en/ai-principles",
+    "verify": false,
+    "last_verified": "2026-09-24"
+  },
+  {
+    "id": "ccw-gge-laws",
+    "title": "CCW Group of Governmental Experts on lethal autonomous weapons",
+    "short": "Geneva process under the Convention on Certain Conventional Weapons",
+    "jurisdiction": "CCW High Contracting Parties",
+    "region": "Global",
+    "level": "international",
+    "category": "process",
+    "kind": "Expert group",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Working since 2017 under a Netherlands chair (Robert in den Bosch). Its 2024 to 2026 mandate is to develop by consensus a set of elements of an instrument, ahead of the CCW Seventh Review Conference in Nov 2026. The reference note lists a session on 31 Aug to 4 Sep 2026, which has already passed, so check its outcome and the latest rolling text. In Sep 2025 Brazil, on behalf of 42 states, declared the text ready for formal negotiations.",
+    "year": 2017,
+    "domain": "military",
+    "sectors": [
+      "defence",
+      "arms control"
+    ],
+    "core_focus": "Consensus rule makes progress slow and contested",
+    "summary": "The main multilateral forum on autonomous weapons. It works on a rolling text that draws on the two-tier approach: prohibit some systems and regulate others.",
+    "key_points": [
+      "Consensus rule makes progress slow and contested",
+      "Central questions: meaningful human control, predictability, accountability",
+      "The UN Secretary-General and ICRC have called for a treaty by 2026"
+    ],
+    "related": [
+      "unga-79-62",
+      "unga-79-239",
+      "reaim-summits",
+      "sg-laws-treaty-call"
+    ],
+    "sections": [
+      "military"
+    ],
+    "url": null,
+    "verify": true,
+    "last_verified": null
   }
 ]
