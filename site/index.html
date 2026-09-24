@@ -1,0 +1,62 @@
+<!-- Add inside <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- Inside <body> -->
+<header class="container">
+    <h1>🌍 AI Governance Map</h1>
+    <p style="color: var(--text-muted);">Global tracker of binding AI laws, soft-law instruments, and standards.</p>
+</header>
+
+<main class="container">
+    <!-- Search -->
+    <input type="text" id="search" placeholder="Search policies, countries, or keywords..." 
+           style="width: 100%; padding: 0.8rem; background: var(--bg-card); border: 1px solid var(--border); color: white; border-radius: 6px; margin-bottom: 1.5rem;">
+
+    <!-- View Toggles -->
+    <div class="view-toggle">
+        <button class="btn active" onclick="switchView('table')">📊 Table View</button>
+        <button class="btn" onclick="switchView('map')">🗺️ Map View</button>
+    </div>
+
+    <!-- Table View -->
+    <div id="table-view" style="overflow-x: auto;">
+        <table id="register-table">
+            <thead>
+                <tr>
+                    <th style="width: 40px;"><input type="checkbox" id="select-all"></th>
+                    <th>Type</th>
+                    <th>Instrument</th>
+                    <th>Jurisdiction</th>
+                    <th>Status</th>
+                    <th class="core-focus">Core Focus</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Map View -->
+    <div id="map-view" style="display: none;">
+        <div id="map"></div>
+    </div>
+</main>
+
+<!-- Sticky Comparison Panel -->
+<div id="compare-panel">
+    <div>
+        <strong>Compare Policies:</strong> <span id="compare-count">0</span>/3 selected
+    </div>
+    <div>
+        <button class="btn" onclick="showComparison()">View Comparison</button>
+        <button class="btn" style="background: var(--bg-hover);" onclick="clearComparison()">Clear</button>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/app.js"></script>
