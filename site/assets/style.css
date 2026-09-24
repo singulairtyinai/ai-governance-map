@@ -1,0 +1,27 @@
+/* Fix table column text truncation */
+#register-table td:nth-child(5),
+#register-table th:nth-child(5) {
+    min-width: 250px;
+    max-width: 400px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+}
+
+/* Improve table responsiveness */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table td {
+    vertical-align: top;
+    padding: 12px 15px;
+    line-height: 1.6;
+}
