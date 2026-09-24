@@ -1,27 +1,70 @@
-/* Fix table column text truncation */
-#register-table td:nth-child(5),
-#register-table th:nth-child(5) {
-    min-width: 250px;
-    max-width: 400px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-overflow: clip;
+/* site/assets/styles.css */
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-hover: #334155;
+    --primary: #3b82f6;
+    --accent: #06b6d4;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
 }
 
-/* Improve table responsiveness */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-table {
-    width: 100%;
-    table-layout: fixed;
-}
-
-table td {
-    vertical-align: top;
-    padding: 12px 15px;
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1e1b4b 100%);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+
+/* FIX: Core Focus Column Truncation */
+table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 8px; overflow: hidden; }
+th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: #0f172a; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
+td { vertical-align: top; }
+
+/* Specifically target the Core Focus column (adjust index if needed, e.g., nth-child(6)) */
+td.core-focus, th.core-focus {
+    min-width: 280px;
+    max-width: 400px;
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* Interactive Elements */
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px;
+    cursor: pointer; font-weight: 600; transition: transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); }
+
+.view-toggle { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.view-toggle .btn { background: var(--bg-card); border: 1px solid var(--border); }
+.view-toggle .btn.active { background: var(--primary); border-color: var(--primary); }
+
+/* Map Container */
+#map { height: 600px; width: 100%; border-radius: 8px; border: 1px solid var(--border); display: none; }
+
+/* Comparison Panel */
+#compare-panel {
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-card);
+    border-top: 2px solid var(--primary); padding: 1rem 2rem;
+    transform: translateY(100%); transition: transform 0.3s ease; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+}
+#compare-panel.active { transform: translateY(0); }
+
+/* Badges */
+.badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+.badge-hard { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; }
+.badge-soft { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid #f59e0b; }
+
+a.url-link { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+a.url-link:hover { text-decoration: underline; }
