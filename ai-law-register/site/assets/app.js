@@ -8,10 +8,78 @@
     status: { in_force: 'In force', adopted: 'Adopted', draft: 'Draft or bill', ongoing: 'Ongoing', concluded: 'Concluded', revoked: 'Revoked', lapsed: 'Lapsed' },
     level: { international: 'International', regional: 'Regional', national: 'National', subnational: 'Subnational' }
   };
-  let VIEWS = ['register', 'timeline', 'compare', 'glossary', 'about'];
-  const NAV_LABEL = { register: 'Register', timeline: 'Timeline', compare: 'Compare', glossary: 'Glossary', about: 'About' };
+  let VIEWS = ['register', 'map', 'timeline', 'compare', 'glossary', 'about'];
+  const NAV_LABEL = { register: 'Register', map: 'Map', timeline: 'Timeline', compare: 'Compare', glossary: 'Glossary', about: 'About' };
   const SIDEBAR_VIEWS = ['register', 'timeline'];
   const MAX_COMPARE = 3;
+
+  /* ---------- Country flags ---------- */
+  // Only sovereign states get a flag; institutions and multilateral bodies (Council of
+  // Europe, ASEAN, G7, OECD, industry groups) intentionally get none rather than a wrong one.
+  const FLAG_RULES = [
+    [/european union/i, '🇪🇺'],
+    [/united nations/i, '🇺🇳'],
+    [/\bunited states\b|U\.S\.A?\.?\b/i, '🇺🇸'],
+    [/\bchina\b/i, '🇨🇳'],
+    [/\bindia\b/i, '🇮🇳'],
+    [/\bjapan\b/i, '🇯🇵'],
+    [/south korea|republic of korea/i, '🇰🇷'],
+    [/\bbrazil\b/i, '🇧🇷'],
+    [/\bpakistan\b/i, '🇵🇰'],
+    [/united kingdom/i, '🇬🇧'],
+    [/\bcanada\b/i, '🇨🇦'],
+    [/\bfrance\b/i, '🇫🇷'],
+    [/\bgermany\b/i, '🇩🇪'],
+    [/\bsingapore\b/i, '🇸🇬'],
+    [/\baustralia\b/i, '🇦🇺'],
+    [/\bnetherlands\b/i, '🇳🇱']
+  ];
+  function flagFor(text) {
+    if (!text) return '';
+    for (const [re, flag] of FLAG_RULES) if (re.test(text)) return flag;
+    return '';
+  }
+  function flagged(text) {
+    const f = flagFor(text);
+    return f ? h('span', null, h('span', { class: 'flag', 'aria-hidden': 'true' }, f), text) : text;
+  }
+
+  /* ---------- Map: jurisdiction -> ISO3 for the world map ---------- */
+  const EU27 = ['AUT', 'BEL', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'NLD', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE'];
+  const ISO_RULES = [
+    [/european union/i, EU27],
+    [/\bunited states\b/i, ['USA']],
+    [/\bchina\b/i, ['CHN']],
+    [/\bjapan\b/i, ['JPN']],
+    [/south korea|republic of korea/i, ['KOR']],
+    [/\bindia\b/i, ['IND']],
+    [/\bbrazil\b/i, ['BRA']],
+    [/\bpakistan\b/i, ['PAK']],
+    [/united kingdom/i, ['GBR']],
+    [/\bcanada\b/i, ['CAN']],
+    [/\bfrance\b/i, ['FRA']],
+    [/\bgermany\b/i, ['DEU']],
+    [/\bsingapore\b/i, ['SGP']],
+    [/\baustralia\b/i, ['AUS']],
+    [/\bnetherlands\b/i, ['NLD']]
+  ];
+  function isoFor(jurisdiction) {
+    for (const [re, isos] of ISO_RULES) if (re.test(jurisdiction || '')) return isos;
+    return [];
+  }
+  let WORLD = [];
+
+  /* ---------- Theme ---------- */
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    $('#theme-toggle').addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme || 'dark';
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    });
+  }
 
   const state = {
     view: 'register',
@@ -110,7 +178,7 @@
   /* ---------- Nav ---------- */
 
   function buildNav() {
-    VIEWS = ['register', ...SECTIONS.sections.map((s) => s.id), 'timeline', 'compare', 'glossary', 'about'];
+    VIEWS = ['register', 'map', ...SECTIONS.sections.map((s) => s.id), 'timeline', 'compare', 'glossary', 'about'];
     $('#nav').replaceChildren(...VIEWS.map((id) => {
       const sec = SECTIONS.sections.find((s) => s.id === id);
       const label = NAV_LABEL[id] || (sec && sec.nav) || id;
@@ -143,18 +211,41 @@
     if (b.type === 'note') return h('div', { class: 'status-note block', text: b.text });
     if (b.type === 'table') {
       const checkCol = b.linkColumn || 0;
-      const rows = b.rows.map((r) => h('tr', null, r.cells.map((c, i) => {
-        const inLink = b.linkColumn === i && r.ref && byId(r.ref);
-        const td = h('td', null,
-          inLink ? h('a', { href: `#/register/${r.ref}`, text: c }) : c,
-          (r.check && i === checkCol) ? h('div', { class: 'cell-check' }, h('span', { 'aria-hidden': 'true' }, '⚠ '), r.check) : null);
-        if (b.tagColumn === i) { td.classList.add('tag-cell'); td.dataset.cat = catClass(c); }
-        return td;
-      })));
+      const compareable = b.rows.some((r) => r.ref && byId(r.ref));
+      const rows = b.rows.map((r) => {
+        const cells = r.cells.map((c, i) => {
+          const inLink = b.linkColumn === i && r.ref && byId(r.ref);
+          let content = c;
+          if (b.flagColumn === i) content = flagged(c);
+          else if (inLink) content = h('a', { href: `#/register/${r.ref}`, text: c });
+          const td = h('td', null,
+            content,
+            (r.check && i === checkCol) ? h('div', { class: 'cell-check' }, h('span', { 'aria-hidden': 'true' }, '⚠ '), r.check) : null);
+          if (b.tagColumn === i) { td.classList.add('tag-cell'); td.dataset.cat = catClass(c); }
+          return td;
+        });
+        if (compareable) {
+          const item = r.ref && byId(r.ref);
+          cells.unshift(h('td', { class: 'pick-col' }, item ? h('input', {
+            type: 'checkbox', checked: state.compare.includes(item.id), 'aria-label': `Select ${item.title} for comparison`,
+            onchange: (e) => {
+              if (e.target.checked) {
+                if (state.compare.length >= MAX_COMPARE) { e.target.checked = false; announce(`You can compare up to ${MAX_COMPARE} entries.`); return; }
+                state.compare.push(item.id);
+              } else {
+                state.compare = state.compare.filter((x) => x !== item.id);
+              }
+              renderTray();
+            }
+          }) : null));
+        }
+        return h('tr', null, cells);
+      });
       return h('div', { class: 'block' },
         (b.title || b.number) ? h('h3', { text: (b.number ? b.number + '. ' : '') + (b.title || '') }) : null,
         h('div', { class: 'tablewrap' }, h('table', null,
-          h('thead', null, h('tr', null, b.columns.map((col) => h('th', { scope: 'col', text: col })))),
+          h('thead', null, h('tr', null, compareable ? h('th', { class: 'pick-col', scope: 'col' }, h('span', { class: 'sr', text: 'Compare' })) : null,
+            b.columns.map((col) => h('th', { scope: 'col', text: col })))),
           h('tbody', null, rows))));
     }
     return null;
@@ -263,7 +354,7 @@
       i.status_note ? h('div', { class: 'status-note' }, h('strong', { text: LABEL.status[i.status] + '. ' }), i.status_note) : null,
       h('dl', { class: 'facts' },
         h('dt', { text: 'Form' }), h('dd', { text: i.kind }),
-        h('dt', { text: 'Jurisdiction' }), h('dd', { text: `${i.jurisdiction}. Level: ${LABEL.level[i.level].toLowerCase()}.` }),
+        h('dt', { text: 'Jurisdiction' }), h('dd', null, flagged(i.jurisdiction), ` \u2014 level: ${LABEL.level[i.level].toLowerCase()}.`),
         h('dt', { text: 'Sectors' }), h('dd', { text: (i.sectors || []).join(', ') || 'Not specified' })
       ),
       rel.length ? [h('h3', { text: 'Related entries' }), h('div', { class: 'rel' }, rel.map((r) =>
@@ -306,7 +397,7 @@
             h('span', { class: 'entry-title', text: i.title }),
             h('span', { class: 'entry-short', text: i.short }),
             tag(i)),
-          h('span', { class: 'meta' }, h('span', { class: 'who', text: i.jurisdiction }), h('br'), i.year))
+          h('span', { class: 'meta' }, h('span', { class: 'who' }, flagged(i.jurisdiction)), h('br'), i.year))
       ),
       detail(i)
     );
@@ -437,12 +528,104 @@
     ));
   }
 
+  /* ---------- Map ---------- */
+
+  function renderMap(main) {
+    const index = {};
+    DATA.forEach((i) => { isoFor(i.jurisdiction).forEach((iso) => { (index[iso] = index[iso] || []).push(i); }); });
+    const iso3s = Object.keys(index);
+    const byIso = (iso) => WORLD.find((w) => w.iso3 === iso) || { name: iso, iso3: iso, d: null };
+
+    const svgHolder = h('div', { class: 'map-svg-holder', id: 'map-svg-holder' });
+    const tip = h('div', { class: 'map-tip', id: 'map-tip' });
+    const results = h('div', { class: 'map-results', id: 'map-results' },
+      h('p', { class: 'count', text: 'Select a highlighted country above, or pick one from the list below.' }));
+    const indexList = h('div', { class: 'map-list', id: 'map-list' });
+
+    main.replaceChildren(
+      h('h2', { class: 'h2', text: 'Map' }),
+      h('p', { class: 'lede', text: 'Countries and the European Union with at least one national law, policy or strategy on record. Select a highlighted country \u2014 on the map or in the list below \u2014 to see its entries.' }),
+      h('div', { class: 'map-wrap' },
+        svgHolder, tip,
+        h('div', { class: 'map-legend' },
+          h('span', { class: 'sw' }, h('i', { style: 'background:var(--accent);opacity:.6' }), `${iso3s.length} jurisdictions on record`),
+          h('span', { class: 'sw' }, h('i', { style: 'background:var(--wash)' }), 'Nothing on record yet'))),
+      results, indexList
+    );
+
+    function showResults(c, entries) {
+      results.replaceChildren(
+        h('h3', null, flagged(c.name)),
+        h('ul', null, entries.map((i) => h('li', null, h('a', { href: `#/register/${i.id}`, text: i.title }), ` \u2014 ${LABEL.category[i.category]}, ${LABEL.binding[i.binding]}`))));
+      results.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    if (!WORLD.length) {
+      svgHolder.replaceChildren(h('div', { class: 'map-status', text: 'Map data could not be loaded.' }));
+    } else {
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 960 500');
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', 'World map. Highlighted countries have at least one AI governance entry on record.');
+      WORLD.forEach((c) => {
+        if (!c.d) return;
+        const path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('d', c.d);
+        path.setAttribute('class', 'map-country');
+        path.dataset.iso3 = c.iso3;
+        const entries = index[c.iso3];
+        if (entries && entries.length) {
+          path.dataset.has = '1';
+          path.addEventListener('mouseenter', (e) => showTip(c, entries, e));
+          path.addEventListener('mousemove', moveTip);
+          path.addEventListener('mouseleave', hideTip);
+          path.addEventListener('click', () => selectCountry(c.iso3));
+        }
+        svg.appendChild(path);
+      });
+      svgHolder.replaceChildren(svg);
+
+      function showTip(c, entries, e) {
+        tip.style.display = 'block';
+        tip.replaceChildren(h('strong', null, flagged(c.name)), h('span', { text: `${entries.length} ${entries.length === 1 ? 'entry' : 'entries'} \u2014 select to view` }));
+        moveTip(e);
+      }
+      function moveTip(e) {
+        const rect = svgHolder.getBoundingClientRect();
+        tip.style.left = Math.min(e.clientX - rect.left + 14, rect.width - 200) + 'px';
+        tip.style.top = (e.clientY - rect.top + 14) + 'px';
+      }
+      function hideTip() { tip.style.display = 'none'; }
+      function selectCountry(iso) {
+        svg.querySelectorAll('.map-country.is-active').forEach((p) => p.classList.remove('is-active'));
+        const el = svg.querySelector(`path[data-iso3="${iso}"]`);
+        if (el) el.classList.add('is-active');
+        showResults(byIso(iso), index[iso]);
+      }
+      indexList.selectCountry = selectCountry;
+    }
+
+    const sortedIso = [...iso3s].sort((a, b) => byIso(a).name.localeCompare(byIso(b).name));
+    indexList.replaceChildren(
+      h('h3', { text: 'All jurisdictions on record' }),
+      h('div', { class: 'chips' }, sortedIso.map((iso) => {
+        const c = byIso(iso);
+        return h('button', {
+          type: 'button', class: 'chip',
+          onclick: () => { if (indexList.selectCountry) indexList.selectCountry(iso); else showResults(c, index[iso]); }
+        }, flagged(c.name), h('span', { class: 'count', text: ` (${index[iso].length})` }));
+      }))
+    );
+  }
+
   /* ---------- Orchestration ---------- */
 
   function renderMain(opts = {}) {
     const main = $('#main');
     const sec = SECTIONS.sections.find((s) => s.id === state.view);
     if (state.view === 'register') renderRegister(main, opts);
+    else if (state.view === 'map') renderMap(main);
     else if (state.view === 'timeline') renderTimeline(main);
     else if (state.view === 'compare') renderCompare(main);
     else if (state.view === 'glossary') renderGlossary(main);
@@ -479,14 +662,16 @@
 
   async function init() {
     try {
-      const [inst, gloss, sections] = await Promise.all([
+      const [inst, gloss, sections, world] = await Promise.all([
         fetch('data/instruments.json').then((r) => { if (!r.ok) throw new Error('instruments.json: HTTP ' + r.status); return r.json(); }),
         fetch('data/glossary.json').then((r) => { if (!r.ok) throw new Error('glossary.json: HTTP ' + r.status); return r.json(); }),
-        fetch('data/sections.json').then((r) => { if (!r.ok) throw new Error('sections.json: HTTP ' + r.status); return r.json(); })
+        fetch('data/sections.json').then((r) => { if (!r.ok) throw new Error('sections.json: HTTP ' + r.status); return r.json(); }),
+        fetch('data/world-map.json').then((r) => { if (!r.ok) throw new Error('world-map.json: HTTP ' + r.status); return r.json(); }).catch(() => [])
       ]);
       DATA = inst;
       GLOSSARY = gloss;
       SECTIONS = sections;
+      WORLD = world;
     } catch (err) {
       showError(err);
       return;
@@ -494,6 +679,7 @@
 
     buildNav();
     buildFilters();
+    initTheme();
     $('#q').addEventListener('input', (e) => {
       state.q = e.target.value;
       if (state.view === 'register' && state.open) { state.open = null; history.replaceState(null, '', '#/register'); }

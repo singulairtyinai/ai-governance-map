@@ -695,7 +695,8 @@
               ],
               "check": "The bill containing AIDA (Bill C-27) lapsed when Parliament was prorogued in January 2025. Confirm whether new federal legislation has since been tabled."
             }
-          ]
+          ],
+          "flagColumn": 0
         }
       ]
     },
