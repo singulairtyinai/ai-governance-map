@@ -32,7 +32,8 @@
     [/\bgermany\b/i, '🇩🇪'],
     [/\bsingapore\b/i, '🇸🇬'],
     [/\baustralia\b/i, '🇦🇺'],
-    [/\bnetherlands\b/i, '🇳🇱']
+    [/\bnetherlands\b/i, '🇳🇱'],
+    [/\brussia/i, '🇷🇺']
   ];
   function flagFor(text) {
     if (!text) return '';
@@ -61,7 +62,8 @@
     [/\bgermany\b/i, ['DEU']],
     [/\bsingapore\b/i, ['SGP']],
     [/\baustralia\b/i, ['AUS']],
-    [/\bnetherlands\b/i, ['NLD']]
+    [/\bnetherlands\b/i, ['NLD']],
+    [/\brussia/i, ['RUS']]
   ];
   function isoFor(jurisdiction) {
     for (const [re, isos] of ISO_RULES) if (re.test(jurisdiction || '')) return isos;
@@ -298,7 +300,7 @@
   }
 
   function syncChips() {
-    document.querySelectorAll('.chip').forEach((c) => {
+    document.querySelectorAll('.chip[data-group]').forEach((c) => {
       c.setAttribute('aria-pressed', String(state.f[c.dataset.group].has(c.dataset.value)));
     });
   }
