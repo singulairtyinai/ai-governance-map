@@ -2060,5 +2060,75 @@
       "russia-ai-development-law-2026"
     ],
     "url": "https://cadeproject.org/updates/russia-proposes-powers-to-restrict-or-ban-foreign-ai-tools/"
+  },
+  {
+    "id": "waico",
+    "title": "World Artificial Intelligence Cooperation Organization (WAICO)",
+    "short": "China-led intergovernmental body, headquartered in Shanghai",
+    "jurisdiction": "World AI Cooperation Organization",
+    "region": "Global",
+    "level": "international",
+    "category": "process",
+    "kind": "Intergovernmental organisation (founding agreement)",
+    "binding": "pending",
+    "status": "adopted",
+    "status_note": "Founding agreement signed by 29 countries in Shanghai on 16 Jul 2026; eight more reportedly signed later that month (37 in total). Ratification requirements, entry into force, governance and funding still to be confirmed.",
+    "year": 2026,
+    "domain": "civil",
+    "sections": [
+      "civilian"
+    ],
+    "approach": "Cooperation and capacity-building, open to all states without political conditions",
+    "sectors": [
+      "cross-sector",
+      "capacity building"
+    ],
+    "summary": "A China-led intergovernmental organisation for international cooperation on AI, focused on the Global South. Its stated aim is AI that is beneficial, safe and fair for all, in line with UN principles. Proposed by Premier Li Qiang in July 2025 and established at the 2026 World Artificial Intelligence Conference.",
+    "key_points": [
+      "Proposed by Premier Li Qiang at the World AI Conference, Jul 2025; backed again by Xi Jinping at APEC, Oct 2025",
+      "Open to all sovereign states, with no conditions tied to political systems or values",
+      "Emphasis on closing the AI access gap between richer and poorer countries",
+      "Widely seen as a counterweight to US-led initiatives such as Pax Silica",
+      "Founding signatories (16 Jul 2026): Algeria, Belarus, Brazil, Cambodia, Cameroon, China, Congo, Cuba, Ethiopia, Indonesia, Kazakhstan, Kenya, Kyrgyzstan, Laos, Lesotho, Malaysia, Mozambique, Myanmar, Nicaragua, Oman, Pakistan, Russia, Senegal, Serbia, South Africa, Tajikistan, Uzbekistan, Venezuela, Zambia"
+    ],
+    "sponsors": [
+      "Algeria",
+      "Belarus",
+      "Brazil",
+      "Cambodia",
+      "Cameroon",
+      "China",
+      "Congo",
+      "Cuba",
+      "Ethiopia",
+      "Indonesia",
+      "Kazakhstan",
+      "Kenya",
+      "Kyrgyzstan",
+      "Laos",
+      "Lesotho",
+      "Malaysia",
+      "Mozambique",
+      "Myanmar",
+      "Nicaragua",
+      "Oman",
+      "Pakistan",
+      "Russia",
+      "Senegal",
+      "Serbia",
+      "South Africa",
+      "Tajikistan",
+      "Uzbekistan",
+      "Venezuela",
+      "Zambia"
+    ],
+    "related": [
+      "unga-capacity-building",
+      "unga-79-325",
+      "russia-ai-development-law-2026"
+    ],
+    "url": "https://english.news.cn/20260716/2d364f232dd7456c8edf1d67d5125d37/c.html",
+    "verify": true,
+    "last_verified": null
   }
 ]

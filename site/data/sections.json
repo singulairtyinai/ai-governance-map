@@ -141,6 +141,17 @@
             },
             {
               "cells": [
+                "Multilateral process (new body)",
+                "World AI Cooperation Organization (WAICO)",
+                "China, with 29 founding signatories; headquartered in Shanghai",
+                "Founding agreement signed 16 Jul 2026",
+                "AI cooperation and capacity-building for the Global South, with no conditions on political system"
+              ],
+              "ref": "waico",
+              "check": "Confirm the membership count and whether the agreement needs ratification before it takes legal effect."
+            },
+            {
+              "cells": [
                 "Regional guidance",
                 "ASEAN Expanded Guide on AI Governance and Ethics (Generative AI)",
                 "ASEAN",
@@ -727,7 +738,8 @@
             "The three consecutive UNGA LAWS resolutions (2023–2025) show a pattern of narrowing procedural mandates even as vote counts remain high — the 2025 text only “encouraged” further exchanges rather than mandating new consultations, and the US shifted from abstention to voting against.",
             "Austria and Pakistan are both co-sponsors of the broader “AI in the military domain” resolution track (A/RES/79/239 and its 2025 follow-up), which is distinct from the narrower LAWS-specific resolution track.",
             "The HLAB-AI's “Governing AI for Humanity” report remains the most comprehensive UN diagnostic of governance gaps, highlighting that 118 mostly Global South states are excluded from major AI governance initiatives.",
-            "Industry self-governance (FMF, safety frameworks, HAIP) fills operational gaps left by slower-moving multilateral processes, but faces credibility questions due to uneven compliance and inherent conflicts of interest."
+            "Industry self-governance (FMF, safety frameworks, HAIP) fills operational gaps left by slower-moving multilateral processes, but faces credibility questions due to uneven compliance and inherent conflicts of interest.",
+            "Global AI governance is splitting into blocs: the China-led World AI Cooperation Organization (WAICO, founded July 2026 with 29 signatories and a Global South focus) now sits alongside the G7/OECD processes and US-led initiatives such as Pax Silica."
           ]
         }
       ]
