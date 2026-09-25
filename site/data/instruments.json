@@ -1777,5 +1777,288 @@
     "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
     "verify": true,
     "last_verified": null
+  },
+  {
+    "id": "russia-ai-development-law-2026",
+    "title": "Russia: Federal Law on Supporting the Development of AI Technologies",
+    "short": "Bill No. 1271570-8, signed 26 Jul 2026",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "hard_law",
+    "kind": "Federal law",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "Passed by the State Duma 8 Jul 2026, approved by the Federation Council 17 Jul, signed 26 Jul. In force 1 Sep 2026; labelling, copyright/training, developer obligations and government powers apply from 1 Mar 2027. Confirm the assigned federal law number.",
+    "year": 2026,
+    "domain": "civil",
+    "sections": [
+      "civilian",
+      "national"
+    ],
+    "approach": "Support-first framework for large models, built around technological sovereignty",
+    "sectors": [
+      "cross-sector",
+      "public sector",
+      "content"
+    ],
+    "summary": "Russia's first federal AI law. It covers foundation models of at least one billion parameters, creates 'sovereign' and 'national' model categories that must keep servers and data in Russia and respect 'traditional Russian spiritual and moral values', and sets state support for domestic developers as a national goal.",
+    "key_points": [
+      "Sovereign models must be built entirely in Russia from Russian components; national models may use foreign components",
+      "The government may require only sovereign or national models in state information systems and other sensitive sectors",
+      "Platforms with over 500,000 daily users must offer a way to label AI-generated audio and video (from Mar 2027)",
+      "Training on lawfully accessed copyrighted works and text-and-data mining are not infringement; providers must tell users who owns rights to outputs",
+      "A 'trusted AI' category with mandatory certification for critical infrastructure was dropped from the final text"
+    ],
+    "related": [
+      "russia-ai-strategy-2030",
+      "russia-foreign-ai-restrictions-draft",
+      "russia-risk-based-ai-bill-draft"
+    ],
+    "url": "https://tass.com/society/2180163"
+  },
+  {
+    "id": "russia-ai-strategy-2030",
+    "title": "Russia: National Strategy for the Development of AI to 2030",
+    "short": "Presidential Decree No. 490 (2019), amended by Decree No. 124 (2024)",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "soft_law",
+    "kind": "National strategy (presidential decree)",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Approved 10 Oct 2019; substantially amended 15 Feb 2024.",
+    "year": 2019,
+    "domain": "both",
+    "sections": [
+      "civilian",
+      "national"
+    ],
+    "approach": "State-led industrial policy emphasising technological sovereignty",
+    "sectors": [
+      "cross-sector",
+      "research",
+      "infrastructure"
+    ],
+    "summary": "The founding policy document for AI in Russia. The 2024 amendments respond to sanctions, add large and generative models to the definition of AI, and set targets for industry adoption and spending to 2030.",
+    "key_points": [
+      "Target of 95% AI readiness in priority industries by 2030",
+      "Annual AI spending target of RUB 850 billion",
+      "Priorities: computing infrastructure, domestic electronics, research, data access and international cooperation"
+    ],
+    "related": [
+      "russia-ai-development-law-2026"
+    ],
+    "url": "https://cset.georgetown.edu/wp-content/uploads/Decree-of-the-President-of-the-Russian-Federation-on-the-Development-of-Artificial-Intelligence-in-the-Russian-Federation-.pdf"
+  },
+  {
+    "id": "russia-moscow-ai-regime-123fz",
+    "title": "Russia: Moscow experimental AI regime (Federal Law 123-FZ)",
+    "short": "Federal Law No. 123-FZ of 24 Apr 2020",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "hard_law",
+    "kind": "Federal law (experimental regime)",
+    "binding": "binding",
+    "status": "lapsed",
+    "status_note": "In force 1 Jul 2020 for five years. Amended in 2024 (233-FZ) to cover anonymised personal data sets. The five-year term appears to have ended in 2025; confirm whether it was extended.",
+    "year": 2020,
+    "domain": "civil",
+    "sections": [
+      "national"
+    ],
+    "approach": "Regulatory sandbox limited to Moscow",
+    "sectors": [
+      "cross-sector",
+      "data"
+    ],
+    "summary": "A five-year city-level legal regime letting companies develop and test AI in Moscow under relaxed rules, including access to anonymised personal data.",
+    "key_points": [
+      "First Russian federal law aimed specifically at AI",
+      "2024 amendments set rules for forming and accessing anonymised personal data sets"
+    ],
+    "related": [
+      "russia-experimental-regimes-258fz"
+    ],
+    "url": "https://www.lexology.com/library/detail.aspx?g=74480340-bf4a-4f5d-bc77-54d65dd4c26d"
+  },
+  {
+    "id": "russia-experimental-regimes-258fz",
+    "title": "Russia: Experimental legal regimes for digital innovation (Federal Law 258-FZ)",
+    "short": "Federal Law No. 258-FZ of 31 Jul 2020",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "hard_law",
+    "kind": "Federal law (regulatory sandboxes)",
+    "binding": "binding",
+    "status": "in_force",
+    "status_note": "In force 28 Jan 2021. A 2024 amendment in force 4 Jan 2025 extended liability for harm and added insurance requirements; sources disagree on its law number.",
+    "year": 2020,
+    "domain": "civil",
+    "sections": [
+      "national"
+    ],
+    "approach": "Cross-sector regulatory sandboxes",
+    "sectors": [
+      "cross-sector"
+    ],
+    "summary": "Lets the government set up time-limited sandboxes across sectors where digital technologies, including AI, can be tested outside normal rules.",
+    "key_points": [
+      "Sandboxes are created by government decision for specific sectors and participants",
+      "Participants are liable for harm caused during testing and must carry liability insurance (2024 amendment)"
+    ],
+    "related": [
+      "russia-moscow-ai-regime-123fz"
+    ],
+    "url": "https://cryptoslate.com/crypto-laws/russia-federal-law-258-fz-experimental-legal-regimes/"
+  },
+  {
+    "id": "russia-ai-ethics-code-2021",
+    "title": "Russia: Code of Ethics in the Field of AI",
+    "short": "AI Alliance Russia, 26 Oct 2021",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "industry",
+    "kind": "Voluntary code of conduct",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Signed Oct 2021; extended by a 2024 declaration on responsible generative AI.",
+    "year": 2021,
+    "domain": "civil",
+    "sections": [
+      "industry",
+      "national"
+    ],
+    "approach": "Voluntary industry self-regulation",
+    "sectors": [
+      "cross-sector"
+    ],
+    "summary": "Voluntary ethics code drawn up by the AI Alliance Russia with government support and signed by major companies and research bodies, now more than 120 organisations.",
+    "key_points": [
+      "Early signatories include Sber, Yandex, VK, MTS, Gazprom Neft, Rostelecom and Rosatom",
+      "2024 declaration adds commitments on the responsible development and use of generative AI"
+    ],
+    "related": [
+      "russia-ai-strategy-2030"
+    ],
+    "url": "https://tass.com/economy/1354187"
+  },
+  {
+    "id": "russia-tc164-standards",
+    "title": "Russia: National AI standards (Technical Committee 164)",
+    "short": "Rosstandart TC 164 'Artificial Intelligence'",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "standard",
+    "kind": "National standards (GOST R)",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Committee set up in 2019; roughly 150 AI standards reported, with more in development.",
+    "year": 2019,
+    "domain": "civil",
+    "sections": [
+      "national"
+    ],
+    "approach": "Technical standardisation by sector",
+    "sectors": [
+      "healthcare",
+      "transport",
+      "education"
+    ],
+    "summary": "Rosstandart's AI committee develops national GOST standards on AI, with a large body of work on medical AI through its healthcare subcommittee.",
+    "key_points": [
+      "Standards cover terminology, testing and verification in medicine, transport, education and remote sensing",
+      "Healthcare subcommittee based at Moscow's Center for Diagnostics and Telemedicine"
+    ],
+    "related": [],
+    "url": "https://tass.com/economy/1974537"
+  },
+  {
+    "id": "russia-risk-based-ai-bill-draft",
+    "title": "Russia: Proposed risk-based AI regulation bill",
+    "short": "Discussed in State Duma working groups, 2025",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "hard_law",
+    "kind": "Draft federal law (proposal)",
+    "binding": "pending",
+    "status": "draft",
+    "status_note": "Reported in April 2025. Not adopted in this form; the 2026 AI law took a lighter, support-first approach.",
+    "year": 2025,
+    "domain": "civil",
+    "sections": [
+      "national"
+    ],
+    "approach": "Risk-based classification",
+    "sectors": [
+      "cross-sector",
+      "healthcare",
+      "transport",
+      "law enforcement"
+    ],
+    "summary": "A reported proposal to classify AI systems by risk, ban those with unacceptable risk, and require registration, certification and insurance for high-risk systems.",
+    "key_points": [
+      "Ban on AI posing an unacceptable risk to rights or security",
+      "State registration and certification for high-risk systems",
+      "Developer liability for harm and mandatory insurance for high-risk operators"
+    ],
+    "related": [
+      "russia-ai-development-law-2026"
+    ],
+    "url": "https://www.kyivpost.com/post/50643"
+  },
+  {
+    "id": "russia-foreign-ai-restrictions-draft",
+    "title": "Russia: Proposed restrictions on foreign AI services",
+    "short": "Reported Ministry of Digital Development proposal",
+    "jurisdiction": "Russian Federation",
+    "region": "Europe",
+    "level": "national",
+    "verify": true,
+    "last_verified": null,
+    "category": "hard_law",
+    "kind": "Draft rules (proposal)",
+    "binding": "pending",
+    "status": "draft",
+    "status_note": "Reported as due to take effect 1 Sep 2027. Unclear whether this is part of the 2026 AI law or a separate measure; confirm before relying on it.",
+    "year": 2026,
+    "domain": "civil",
+    "sections": [
+      "national"
+    ],
+    "approach": "Data localisation and market access control",
+    "sectors": [
+      "content",
+      "data"
+    ],
+    "summary": "Reported plans to let authorities restrict or block foreign AI services such as ChatGPT, Gemini and Claude, and to require large foreign services to store Russian user data in Russia.",
+    "key_points": [
+      "Foreign AI services with over 500,000 daily users in Russia would store queries, chat histories and metadata in Russia for three years",
+      "Justified by the government as protection against manipulation and for 'traditional values'"
+    ],
+    "related": [
+      "russia-ai-development-law-2026"
+    ],
+    "url": "https://cadeproject.org/updates/russia-proposes-powers-to-restrict-or-ban-foreign-ai-tools/"
   }
 ]

@@ -694,6 +694,17 @@
                 "Prevents severe harm and algorithmic bias in high-impact AI systems; enforces compliance reporting, audit requirements, and steep penalties for non-compliance"
               ],
               "check": "The bill containing AIDA (Bill C-27) lapsed when Parliament was prorogued in January 2025. Confirm whether new federal legislation has since been tabled."
+            },
+            {
+              "cells": [
+                "Russian Federation",
+                "Federal Law on Supporting the Development of AI Technologies (2026); National AI Strategy to 2030",
+                "Support-first framework built around technological sovereignty",
+                "Yes",
+                "Sovereign and national model categories with data kept in Russia and alignment with 'traditional values'; option to mandate domestic models in state systems; AI content labelling on large platforms from 2027"
+              ],
+              "ref": "russia-ai-development-law-2026",
+              "check": "Compiled from news and law-firm summaries; confirm against the official text on publication.pravo.gov.ru."
             }
           ],
           "flagColumn": 0
