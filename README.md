@@ -18,6 +18,13 @@ python -m http.server -d site 8000
 
 Then open http://localhost:8000. (Opening `index.html` directly will not work, because browsers block the data files.)
 
+## Interface
+
+- **Dark, tech-styled theme by default**, with a light/dark toggle (top right) that remembers your choice.
+- **Country flags** next to jurisdictions in the register and on the National and regional table.
+- **Compare** works from the register and from the Civilian AI / Military AI consolidated tables alike — tick up to three, a tray appears, click Compare.
+- **Map**: a world map (bundled locally as `site/data/world-map.json`, simplified from public domain boundary data, so it needs no external map service at runtime) highlighting every country and the EU with at least one national-level entry. Click a country, or pick one from the list below the map, to see its entries.
+
 ## Sections
 
 The site has two kinds of page:

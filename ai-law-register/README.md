@@ -5,8 +5,9 @@ A static, searchable register of binding AI laws, soft-law instruments, standard
 ## Publish on GitHub Pages
 
 1. Create a new GitHub repository and push this folder to the `main` branch.
-2. In the repository, open **Settings > Pages** and set **Source** to **GitHub Actions**.
-3. Push again (or run the workflow from the **Actions** tab). The site goes live at `https://<your-username>.github.io/<repo-name>/`.
+2. Push once, then check the **Actions** tab. The workflow validates the data and, on success, publishes the `site/` folder to a `gh-pages` branch (creating it the first time).
+3. Once that branch exists (after the first successful run), open **Settings > Pages**, set **Source** to **Deploy from a branch**, and choose branch `gh-pages`, folder `/ (root)`. Save.
+4. The site is then live at `https://<your-username>.github.io/<repo-name>/`. Every later push to `main` re-runs the workflow and updates it automatically — you only do step 3 once.
 
 The workflow in `.github/workflows/deploy.yml` validates the data first and only deploys if it passes.
 
@@ -17,6 +18,13 @@ python -m http.server -d site 8000
 ```
 
 Then open http://localhost:8000. (Opening `index.html` directly will not work, because browsers block the data files.)
+
+## Interface
+
+- **Dark, tech-styled theme by default**, with a light/dark toggle (top right) that remembers your choice.
+- **Country flags** next to jurisdictions in the register and on the National and regional table.
+- **Compare** works from the register and from the Civilian AI / Military AI consolidated tables alike — tick up to three, a tray appears, click Compare.
+- **Map**: a world map (bundled locally as `site/data/world-map.json`, simplified from public domain boundary data, so it needs no external map service at runtime) highlighting every country and the EU with at least one national-level entry. Click a country, or pick one from the list below the map, to see its entries.
 
 ## Sections
 

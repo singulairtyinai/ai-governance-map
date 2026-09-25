@@ -3,202 +3,41 @@
   "title": "AI law register entry",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "id",
-    "title",
-    "short",
-    "jurisdiction",
-    "region",
-    "level",
-    "category",
-    "kind",
-    "binding",
-    "status",
-    "domain",
-    "summary"
-  ],
+  "required": ["id", "title", "short", "jurisdiction", "region", "level", "category", "kind", "binding", "status", "domain", "summary"],
   "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-      "description": "Unique slug, used in page links"
-    },
-    "title": {
-      "type": "string",
-      "minLength": 3
-    },
-    "short": {
-      "type": "string",
-      "description": "One-line descriptor shown under the title"
-    },
-    "jurisdiction": {
-      "type": "string"
-    },
-    "region": {
-      "enum": [
-        "Global",
-        "Europe",
-        "Asia-Pacific",
-        "Americas",
-        "Africa",
-        "Middle East"
-      ]
-    },
-    "level": {
-      "enum": [
-        "international",
-        "regional",
-        "national",
-        "subnational"
-      ]
-    },
-    "category": {
-      "enum": [
-        "hard_law",
-        "soft_law",
-        "standard",
-        "process",
-        "industry"
-      ]
-    },
-    "kind": {
-      "type": "string",
-      "description": "Treaty, Statute, Regulation, Executive order, Recommendation, Industry body, etc."
-    },
-    "binding": {
-      "enum": [
-        "binding",
-        "pending",
-        "non_binding"
-      ]
-    },
-    "status": {
-      "enum": [
-        "in_force",
-        "adopted",
-        "draft",
-        "ongoing",
-        "concluded",
-        "revoked",
-        "lapsed"
-      ]
-    },
-    "status_note": {
-      "type": "string",
-      "description": "Dates, phases and what to check for updates"
-    },
-    "year": {
-      "type": [
-        "integer",
-        "null"
-      ],
-      "minimum": 1800,
-      "maximum": 2100,
-      "description": "Year the instrument or process began. Omit if the reference material gives no clear year."
-    },
-    "domain": {
-      "enum": [
-        "civil",
-        "military",
-        "both"
-      ]
-    },
-    "approach": {
-      "type": "string",
-      "description": "One-line regulatory-approach label, used on the National and regional page"
-    },
-    "sectors": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "summary": {
-      "type": "string",
-      "minLength": 20
-    },
-    "key_points": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Unique slug, used in page links" },
+    "title": { "type": "string", "minLength": 3 },
+    "short": { "type": "string", "description": "One-line descriptor shown under the title" },
+    "jurisdiction": { "type": "string" },
+    "region": { "enum": ["Global", "Europe", "Asia-Pacific", "Americas", "Africa", "Middle East"] },
+    "level": { "enum": ["international", "regional", "national", "subnational"] },
+    "category": { "enum": ["hard_law", "soft_law", "standard", "process", "industry"] },
+    "kind": { "type": "string", "description": "Treaty, Statute, Regulation, Executive order, Recommendation, Industry body, etc." },
+    "binding": { "enum": ["binding", "pending", "non_binding"] },
+    "status": { "enum": ["in_force", "adopted", "draft", "ongoing", "concluded", "revoked", "lapsed"] },
+    "status_note": { "type": "string", "description": "Dates, phases and what to check for updates" },
+    "year": { "type": ["integer", "null"], "minimum": 1800, "maximum": 2100, "description": "Year the instrument or process began. Omit if the reference material gives no clear year." },
+    "domain": { "enum": ["civil", "military", "both"] },
+    "approach": { "type": "string", "description": "One-line regulatory-approach label, used on the National and regional page" },
+    "sectors": { "type": "array", "items": { "type": "string" } },
+    "summary": { "type": "string", "minLength": 20 },
+    "key_points": { "type": "array", "items": { "type": "string" } },
     "sponsors": {
       "description": "Lead sponsors or co-sponsors, mainly for UN resolutions — a short label, or a list of names",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "anyOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
     },
-    "un_track": {
-      "type": "string",
-      "description": "Which UN resolution track this belongs to, e.g. civilian, laws, military_domain"
-    },
+    "un_track": { "type": "string", "description": "Which UN resolution track this belongs to, e.g. civilian, laws, military_domain" },
     "votes": {
       "description": "Vote tally, mainly for UN resolutions — free text, or a breakdown by body",
       "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
+        { "type": "string" },
+        { "type": "object", "additionalProperties": { "type": "string" } }
       ]
     },
-    "related": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "ids of other entries"
-    },
-    "sections": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "ids of site/data/sections.json sections this entry is featured in"
-    },
-    "url": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Primary source (official text or official page)"
-    },
-    "verify": {
-      "type": "boolean",
-      "description": "True when status changes quickly and needs a fresh check"
-    },
-    "last_verified": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-      "description": "Date a maintainer last checked the entry against the primary source"
-    },
-    "core_focus": {
-      "type": "string",
-      "description": "One or two sentences on what the instrument actually regulates; shown in the register table"
-    },
-    "country_code": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "pattern": "^[A-Z]{2,6}$",
-      "description": "ISO-style country/union code used for flags and the map view (EU, US, CN...). Use INT, UN or ASEAN for multi-state instruments."
-    }
+    "related": { "type": "array", "items": { "type": "string" }, "description": "ids of other entries" },
+    "sections": { "type": "array", "items": { "type": "string" }, "description": "ids of site/data/sections.json sections this entry is featured in" },
+    "url": { "type": ["string", "null"], "description": "Primary source (official text or official page)" },
+    "verify": { "type": "boolean", "description": "True when status changes quickly and needs a fresh check" },
+    "last_verified": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Date a maintainer last checked the entry against the primary source" }
   }
 }
