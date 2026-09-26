@@ -48,5 +48,30 @@
     "term": "International humanitarian law (IHL)",
     "definition": "The law of armed conflict, including the principles of distinction, proportionality and precaution.",
     "why": "The baseline standard against which military uses of AI are assessed."
+  },
+  {
+    "term": "AI management system (AIMS)",
+    "definition": "The policies, roles, processes and controls an organisation uses to govern AI, as specified by ISO/IEC 42001.",
+    "why": "Makes AI governance systematic and auditable, and can be certified."
+  },
+  {
+    "term": "AI GRC",
+    "definition": "Governance, risk and compliance applied to AI: the function that turns laws, standards and policies into controls and evidence inside an organisation.",
+    "why": "Connects the rules in this register to what an organisation actually does."
+  },
+  {
+    "term": "Agentic AI",
+    "definition": "AI systems that can plan and take actions, such as calling tools, accessing data or triggering transactions, with some degree of autonomy.",
+    "why": "Acting rather than only generating text raises new questions of authority, permissions and human accountability."
+  },
+  {
+    "term": "Provider and deployer",
+    "definition": "Roles under the EU AI Act: the provider develops an AI system or places it on the market; the deployer uses it under its own authority.",
+    "why": "Most obligations depend on which role an organisation plays for a given system."
+  },
+  {
+    "term": "Prompt injection",
+    "definition": "An attack in which crafted input makes a language model ignore its instructions or take unintended actions.",
+    "why": "The top risk in the OWASP Top 10 for LLM Applications, and especially serious when models can use tools."
   }
 ]

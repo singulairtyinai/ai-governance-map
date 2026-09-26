@@ -65,6 +65,8 @@
     [/\bnetherlands\b/i, ['NLD']],
     [/\brussia/i, ['RUS']]
   ];
+  // Countries too small to appear in the simplified world map still get a readable name in the list.
+  const UNMAPPED_NAMES = { SGP: 'Singapore' };
   function isoFor(jurisdiction) {
     for (const [re, isos] of ISO_RULES) if (re.test(jurisdiction || '')) return isos;
     return [];
@@ -258,7 +260,7 @@
       h('div', { class: 'sec-head' }, sec.number ? h('span', { class: 'sec-num', text: sec.number }) : null, h('h2', { class: 'h2', text: sec.title })),
       sec.intro ? h('p', { class: 'lede', text: sec.intro }) : null,
       sec.blocks.map(renderBlock),
-      SECTIONS.source_note ? h('p', { class: 'sec-source', text: SECTIONS.source_note }) : null));
+      (sec.source_note || SECTIONS.source_note) ? h('p', { class: 'sec-source', text: sec.source_note || SECTIONS.source_note }) : null));
   }
 
   /* ---------- Sidebar, spectrum, tray ---------- */
@@ -536,7 +538,7 @@
     const index = {};
     DATA.forEach((i) => { isoFor(i.jurisdiction).forEach((iso) => { (index[iso] = index[iso] || []).push(i); }); });
     const iso3s = Object.keys(index);
-    const byIso = (iso) => WORLD.find((w) => w.iso3 === iso) || { name: iso, iso3: iso, d: null };
+    const byIso = (iso) => WORLD.find((w) => w.iso3 === iso) || { name: UNMAPPED_NAMES[iso] || iso, iso3: iso, d: null };
 
     const svgHolder = h('div', { class: 'map-svg-holder', id: 'map-svg-holder' });
     const tip = h('div', { class: 'map-tip', id: 'map-tip' });
