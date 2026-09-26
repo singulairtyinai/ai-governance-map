@@ -15,7 +15,8 @@
     "domain": "civil",
     "sections": [
       "civilian",
-      "national"
+      "national",
+      "grc"
     ],
     "approach": "Risk-based horizontal framework: strict and rights-focused",
     "sectors": [
@@ -498,11 +499,12 @@
     "kind": "Voluntary framework",
     "binding": "non_binding",
     "status": "in_force",
-    "status_note": "AI RMF 1.0 published Jan 2023. The Generative AI Profile (NIST AI 600-1) followed in Jul 2024.",
+    "status_note": "AI RMF 1.0 published Jan 2023, with a companion Playbook of suggested actions. The Generative AI Profile (NIST AI 600-1) followed in Jul 2024. NIST says AI RMF 1.0 is being revised.",
     "year": 2023,
     "domain": "civil",
     "sections": [
-      "civilian"
+      "civilian",
+      "grc"
     ],
     "sectors": [
       "cross-sector"
@@ -510,11 +512,13 @@
     "summary": "A voluntary framework that helps organisations identify, assess and manage AI risks through four functions: Govern, Map, Measure and Manage.",
     "key_points": [
       "Widely referenced in procurement and in state laws as a benchmark for reasonable care",
-      "Generative AI Profile adds risks specific to generative systems"
+      "Generative AI Profile adds risks specific to generative systems",
+      "The AI RMF Playbook gives suggested actions for each of the four functions"
     ],
     "related": [
       "iso-42001",
-      "oecd-principles"
+      "oecd-principles",
+      "owasp-top10-llm"
     ],
     "url": "https://www.nist.gov/itl/ai-risk-management-framework",
     "verify": false,
@@ -535,7 +539,8 @@
     "year": 2023,
     "domain": "civil",
     "sections": [
-      "civilian"
+      "civilian",
+      "grc"
     ],
     "sectors": [
       "cross-sector"
@@ -2128,6 +2133,83 @@
       "russia-ai-development-law-2026"
     ],
     "url": "https://english.news.cn/20260716/2d364f232dd7456c8edf1d67d5125d37/c.html",
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "singapore-mgf-agentic-ai",
+    "title": "Singapore: Model AI Governance Framework for Agentic AI",
+    "short": "Infocomm Media Development Authority (IMDA)",
+    "jurisdiction": "Singapore",
+    "region": "Asia-Pacific",
+    "level": "national",
+    "category": "soft_law",
+    "kind": "Voluntary governance framework",
+    "binding": "non_binding",
+    "status": "in_force",
+    "status_note": "Launched at the World Economic Forum in Jan 2026; updated 20 May 2026 with case studies and new practices.",
+    "year": 2026,
+    "domain": "civil",
+    "sections": [
+      "civilian",
+      "national",
+      "grc"
+    ],
+    "approach": "Voluntary, practice-led guidance",
+    "sectors": [
+      "agentic AI",
+      "cross-sector"
+    ],
+    "summary": "Described as the first governance framework built specifically for AI agents that can plan, use tools and act with increasing autonomy. It keeps humans accountable and sets out how organisations can deploy agents responsibly.",
+    "key_points": [
+      "Four dimensions: assess and bound risks upfront; meaningful human accountability; technical controls and processes across the agent lifecycle; end-user responsibility through transparency and training",
+      "May 2026 update adds practices for multi-agent systems, third-party agents and automation bias, with 10+ deployment case studies",
+      "Typical outputs: agent inventory, permissions matrix, human-approval checkpoints, tool allowlists and kill-switch procedures"
+    ],
+    "related": [
+      "nist-ai-rmf",
+      "iso-42001",
+      "owasp-top10-llm"
+    ],
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/updated-model-ai-governance-framework-for-agentic-ai",
+    "verify": true,
+    "last_verified": null
+  },
+  {
+    "id": "owasp-top10-llm",
+    "title": "OWASP Top 10 for LLM Applications",
+    "short": "OWASP GenAI Security Project, 2026 edition",
+    "jurisdiction": "OWASP GenAI Security Project",
+    "region": "Global",
+    "level": "international",
+    "category": "standard",
+    "kind": "Community security guidance",
+    "binding": "non_binding",
+    "status": "ongoing",
+    "status_note": "Revised periodically. The 2026 edition was published 4 Aug 2026, replacing the 2025 edition.",
+    "year": 2026,
+    "domain": "civil",
+    "sections": [
+      "grc"
+    ],
+    "approach": "Open community technical guidance",
+    "sectors": [
+      "security",
+      "generative AI"
+    ],
+    "summary": "A community-maintained list of the most critical security risks in applications built on large language models, used as a shared vocabulary between governance, security and engineering teams.",
+    "key_points": [
+      "Prompt injection and sensitive information disclosure remain the top two risks in the 2026 edition",
+      "The 2026 edition was informed partly by data from real-world incidents",
+      "Risks from models given tools, memory and execution rights move to OWASP's separate Agentic Top 10",
+      "Maps each risk to established security standards, including MITRE, NIST and CSA"
+    ],
+    "related": [
+      "iso-42001",
+      "nist-ai-rmf",
+      "singapore-mgf-agentic-ai"
+    ],
+    "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/",
     "verify": true,
     "last_verified": null
   }

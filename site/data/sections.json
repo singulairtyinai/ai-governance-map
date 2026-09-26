@@ -723,8 +723,245 @@
       ]
     },
     {
-      "id": "keypoints",
+      "id": "grc",
       "number": "6",
+      "title": "Implementing AI governance (AI GRC)",
+      "nav": "AI GRC",
+      "intro": "The other pages set out what the rules are. This page is about how an organisation puts them into practice: a six-layer model that combines a management system, risk management, agent governance, regulation, technical security and an enterprise operating model.",
+      "source_note": "Content based on “AI Governance & AI GRC Reference Framework — detailed interpretation and structured learning/reference guide”, September 2026. It is an educational reference, not legal or certification advice: use the official standards, legislation and guidance for compliance decisions.",
+      "blocks": [
+        {
+          "id": "grc-layers",
+          "type": "table",
+          "number": "6.1",
+          "title": "The six-layer model",
+          "columns": [
+            "Layer",
+            "Primary reference",
+            "What it contributes",
+            "Questions to answer",
+            "Typical evidence"
+          ],
+          "linkColumn": 1,
+          "rows": [
+            {
+              "cells": [
+                "1. Management standards and auditability",
+                "ISO/IEC 42001:2023",
+                "A formal, auditable AI management system (AIMS)",
+                "What AI do we develop, provide or use? Who owns each system and its risks? What evidence shows controls work?",
+                "AI policy and objectives; AI system inventory; accountability matrix; control evidence; continual-improvement process"
+              ],
+              "ref": "iso-42001"
+            },
+            {
+              "cells": [
+                "2. Operational risk",
+                "NIST AI RMF and Playbook",
+                "A shared way to identify, map, measure and manage AI risks (Govern, Map, Measure, Manage)",
+                "What is the system for, and who is affected? Which risks are material? How are residual risks accepted and escalated?",
+                "AI risk taxonomy; risk register; use-case assessment; testing plan; mitigation plan"
+              ],
+              "ref": "nist-ai-rmf"
+            },
+            {
+              "cells": [
+                "3. Emerging technology and agents",
+                "Singapore Model AI Governance Framework for Agentic AI",
+                "Governance for AI agents that plan, use tools and act with growing autonomy",
+                "What can the agent do and access? Which actions need human approval? How can it be stopped?",
+                "Agent inventory; permissions matrix; approval checkpoints; tool allowlists; kill-switch procedures"
+              ],
+              "ref": "singapore-mgf-agentic-ai"
+            },
+            {
+              "cells": [
+                "4. Regulatory baseline",
+                "EU AI Act",
+                "Risk-based legal obligations: prohibited, high-risk, transparency and minimal risk",
+                "Is the system in scope? Are we provider or deployer? Which risk category applies, and which obligations are already in force?",
+                "Applicability assessment; classification record; role assessment; obligations register; compliance evidence map"
+              ],
+              "ref": "eu-ai-act"
+            },
+            {
+              "cells": [
+                "5. Technical security",
+                "OWASP Top 10 for LLM Applications",
+                "A common vocabulary for AI and LLM application security",
+                "Can inputs manipulate the model? Can it leak data? Does it have excessive privileges? Are tools and dependencies controlled?",
+                "Threat model; prompt-injection testing; data-loss controls; privilege controls; AI security test cases"
+              ],
+              "ref": "owasp-top10-llm"
+            },
+            {
+              "cells": [
+                "6. Enterprise perspective",
+                "AI Governance Handbook (Gregory and Sircar, Springer Nature)",
+                "Turns principles into strategy, controls, operating models and execution",
+                "Who owns AI governance? How are use cases approved? How is performance reported to senior management?",
+                "Operating model; governance committee and decision rights; intake workflow; policy suite; management dashboard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "grc-lifecycle",
+          "type": "table",
+          "number": "6.2",
+          "title": "How the layers fit together",
+          "columns": [
+            "Stage",
+            "Purpose",
+            "Key question"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1. AI inventory",
+                "Identify AI systems, models, agents, use cases, owners and business processes",
+                "What AI exists?"
+              ]
+            },
+            {
+              "cells": [
+                "2. Context and intended purpose",
+                "Understand what the system is for, who uses it, what data it touches and who may be affected",
+                "What is it supposed to do, and in what context?"
+              ]
+            },
+            {
+              "cells": [
+                "3. Risk classification",
+                "Apply organisational risk methods, NIST concepts and any regulatory classification",
+                "What risks and regulatory categories apply?"
+              ]
+            },
+            {
+              "cells": [
+                "4. Governance requirements",
+                "Set policies, roles, approvals, documentation, human oversight and accountability",
+                "Who decides, and what controls are required?"
+              ]
+            },
+            {
+              "cells": [
+                "5. Technical security",
+                "Apply AI security controls, testing, access controls, tool restrictions and monitoring",
+                "Can the application be attacked or misused?"
+              ]
+            },
+            {
+              "cells": [
+                "6. Operational controls",
+                "Embed controls in development, procurement, deployment and operations",
+                "Are controls actually embedded in operations?"
+              ]
+            },
+            {
+              "cells": [
+                "7. Evidence and auditability",
+                "Keep documentation, logs, assessments, approvals and test evidence",
+                "Can we prove what was decided and done?"
+              ]
+            },
+            {
+              "cells": [
+                "8. Monitoring and improvement",
+                "Track incidents, performance, changes, new regulations, new threats and control effectiveness",
+                "How do we detect and correct change or failure?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "grc-deliverables",
+          "type": "bullets",
+          "number": "6.3",
+          "title": "Practical deliverables",
+          "items": [
+            "Enterprise AI governance policy",
+            "AI system, model and agent inventory",
+            "AI use-case intake form",
+            "AI risk assessment",
+            "AI Act applicability and classification assessment",
+            "AI vendor and third-party assessment",
+            "AI security and threat assessment",
+            "Human oversight and approval matrix",
+            "AI agent permissions and tool-access matrix",
+            "Model and application testing plan",
+            "AI incident management procedure",
+            "AI monitoring and KPI/KRI dashboard",
+            "AI governance committee terms of reference",
+            "Control-to-evidence matrix",
+            "Internal audit and assurance programme",
+            "Regulatory change monitoring process"
+          ]
+        },
+        {
+          "id": "grc-crosswalk",
+          "type": "table",
+          "number": "6.4",
+          "title": "Reference and primary use",
+          "columns": [
+            "Reference",
+            "Primary use in an AI GRC programme"
+          ],
+          "linkColumn": 0,
+          "rows": [
+            {
+              "cells": [
+                "ISO/IEC 42001",
+                "Management system, governance structure, continual improvement, auditability"
+              ],
+              "ref": "iso-42001"
+            },
+            {
+              "cells": [
+                "NIST AI RMF and Playbook",
+                "Identifying, mapping, measuring and managing AI risk, with practical actions for each function"
+              ],
+              "ref": "nist-ai-rmf"
+            },
+            {
+              "cells": [
+                "Singapore Agentic AI framework",
+                "Agent autonomy, authority, human accountability, lifecycle controls and end-user responsibility"
+              ],
+              "ref": "singapore-mgf-agentic-ai"
+            },
+            {
+              "cells": [
+                "EU AI Act",
+                "Legal scope, risk classification and regulatory obligations"
+              ],
+              "ref": "eu-ai-act"
+            },
+            {
+              "cells": [
+                "OWASP Top 10 for LLM Applications",
+                "Technical AI application security, and a shared vocabulary between engineering and GRC"
+              ],
+              "ref": "owasp-top10-llm"
+            },
+            {
+              "cells": [
+                "AI Governance Handbook",
+                "Enterprise adoption, and strategic, technical, ethical and legal guardrails (doi.org/10.1007/978-3-031-89266-0)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "grc-versions",
+          "type": "note",
+          "text": "Version notes: ISO/IEC 42001:2023 is the current edition. NIST is revising AI RMF 1.0; the existing framework and Playbook remain the reference meanwhile. Singapore's agentic AI framework was launched in January 2026 and updated in May 2026. OWASP published the 2026 edition of its LLM Top 10 in August 2026. The EU AI Act applies in stages and Commission guidance keeps evolving, so check the official text before making compliance decisions. The AI Governance Handbook is a practical book, not a formal standard, so it is not listed in the register."
+        }
+      ]
+    },
+    {
+      "id": "keypoints",
+      "number": "7",
       "title": "Key points for reference",
       "nav": "Key points",
       "intro": "",
